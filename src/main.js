@@ -1,2 +1,2 @@
 import './css/style.css'
-import './js/counter.js'
+import './js/icons.js'
