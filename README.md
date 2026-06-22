@@ -18,6 +18,55 @@ DevLaunch helps early-stage startup teams plan, validate, and launch a product f
 - Demonstrate practical UI decisions: hierarchy, spacing, typography, states, and conversion-focused sections.
 - Ship a complete GitHub portfolio project with documentation and deployment.
 
+## Branch Naming
+
+Use short branch names without `features/`.
+
+Recommended patterns:
+
+- `main` for the stable branch.
+- `setup/<topic>` for initial project setup.
+- `ui/<section>` for landing page sections.
+- `docs/<topic>` for documentation updates.
+- `fix/<topic>` for bug fixes.
+- `refactor/<topic>` for code cleanup without behavior changes.
+- `test/<topic>` for test work.
+- `chore/<topic>` for config, dependencies, and tooling.
+
+Examples:
+
+- `setup/devlaunch-base`
+- `ui/hero-section`
+- `ui/pricing-section`
+- `docs/readme-update`
+- `fix/mobile-menu`
+- `refactor/navbar`
+
+## Commit Naming
+
+Use conventional commits.
+
+Prefixes:
+
+- `feat:` new functionality
+- `fix:` bug fixes
+- `refactor:` code improvements without changing behavior
+- `style:` formatting, spacing, indentation, and visual-only changes
+- `docs:` README and documentation
+- `chore:` project setup, dependencies, and config
+- `test:` tests
+
+Examples:
+
+- `feat: add hero section`
+- `feat: build responsive navbar`
+- `fix: correct mobile menu overflow`
+- `refactor: split feature cards into data`
+- `style: align section spacing`
+- `docs: update project brief`
+- `chore: install tailwind dependencies`
+- `test: add faq accordion coverage`
+
 ## Tech Stack
 
 - Vite
