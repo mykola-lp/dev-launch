@@ -89,16 +89,16 @@ DevLaunch should feel like a modern B2B SaaS product: clean, confident, and oper
 
 ### Suggested Palette
 
-| Token | Color | Usage |
-| --- | --- | --- |
-| Background | `#0B1120` | Main page background |
-| Surface | `#111827` | Cards and panels |
-| Surface Alt | `#1F2937` | Nested UI blocks |
-| Primary | `#7C3AED` | Main CTA and highlights |
-| Accent | `#22C55E` | Positive metrics and growth states |
-| Text | `#F8FAFC` | Main text |
-| Muted Text | `#94A3B8` | Supporting copy |
-| Border | `#334155` | Subtle dividers |
+| Token       | Color     | Usage                              |
+| ----------- | --------- | ---------------------------------- |
+| Background  | `#0B1120` | Main page background               |
+| Surface     | `#111827` | Cards and panels                   |
+| Surface Alt | `#1F2937` | Nested UI blocks                   |
+| Primary     | `#7C3AED` | Main CTA and highlights            |
+| Accent      | `#22C55E` | Positive metrics and growth states |
+| Text        | `#F8FAFC` | Main text                          |
+| Muted Text  | `#94A3B8` | Supporting copy                    |
+| Border      | `#334155` | Subtle dividers                    |
 
 ## Planned Structure
 
