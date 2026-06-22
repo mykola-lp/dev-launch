@@ -119,12 +119,6 @@ src/
 │   ├── faq.js
 │   └── theme.js
 │
-├── sections/
-│   ├── hero.html
-│   ├── features.html
-│   ├── pricing.html
-│   └── faq.html
-│
 └── main.js
 
 index.html
@@ -140,8 +134,8 @@ README.md
 Content:
 
 - Logo: `DevLaunch`
-- Links: `Features`, `How it works`, `Pricing`, `FAQ`
-- Actions: `Log in`, `Get started`
+- Links: `Home`, `Features`, `How it works`, `Pricing`, `FAQ`
+- Actions: `Login`, `Get started`
 
 Requirements:
 
