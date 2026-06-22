@@ -18,13 +18,61 @@ DevLaunch helps early-stage startup teams plan, validate, and launch a product f
 - Demonstrate practical UI decisions: hierarchy, spacing, typography, states, and conversion-focused sections.
 - Ship a complete GitHub portfolio project with documentation and deployment.
 
+## Branch Naming
+
+Use short branch names without `features/`.
+
+Recommended patterns:
+
+- `main` for the stable branch.
+- `setup/<topic>` for initial project setup.
+- `ui/<section>` for landing page sections.
+- `docs/<topic>` for documentation updates.
+- `fix/<topic>` for bug fixes.
+- `refactor/<topic>` for code cleanup without behavior changes.
+- `test/<topic>` for test work.
+- `chore/<topic>` for config, dependencies, and tooling.
+
+Examples:
+
+- `setup/devlaunch-base`
+- `ui/hero-section`
+- `ui/pricing-section`
+- `docs/readme-update`
+- `fix/mobile-menu`
+- `refactor/navbar`
+
+## Commit Naming
+
+Use conventional commits.
+
+Prefixes:
+
+- `feat:` new functionality
+- `fix:` bug fixes
+- `refactor:` code improvements without changing behavior
+- `style:` formatting, spacing, indentation, and visual-only changes
+- `docs:` README and documentation
+- `chore:` project setup, dependencies, and config
+- `test:` tests
+
+Examples:
+
+- `feat: add hero section`
+- `feat: build responsive navbar`
+- `fix: correct mobile menu overflow`
+- `refactor: split feature cards into data`
+- `style: align section spacing`
+- `docs: update project brief`
+- `chore: install tailwind dependencies`
+- `test: add faq accordion coverage`
+
 ## Tech Stack
 
-- React
 - Vite
-- Tailwind CSS
+- Tailwind CSS v4
+- HTML
 - JavaScript
-- Lucide React Icons
 
 ## Design Direction
 
@@ -41,40 +89,48 @@ DevLaunch should feel like a modern B2B SaaS product: clean, confident, and oper
 
 ### Suggested Palette
 
-| Token | Color | Usage |
-| --- | --- | --- |
-| Background | `#0B1120` | Main page background |
-| Surface | `#111827` | Cards and panels |
-| Surface Alt | `#1F2937` | Nested UI blocks |
-| Primary | `#7C3AED` | Main CTA and highlights |
-| Accent | `#22C55E` | Positive metrics and growth states |
-| Text | `#F8FAFC` | Main text |
-| Muted Text | `#94A3B8` | Supporting copy |
-| Border | `#334155` | Subtle dividers |
+| Token       | Color     | Usage                              |
+| ----------- | --------- | ---------------------------------- |
+| Background  | `#0B1120` | Main page background               |
+| Surface     | `#111827` | Cards and panels                   |
+| Surface Alt | `#1F2937` | Nested UI blocks                   |
+| Primary     | `#7C3AED` | Main CTA and highlights            |
+| Accent      | `#22C55E` | Positive metrics and growth states |
+| Text        | `#F8FAFC` | Main text                          |
+| Muted Text  | `#94A3B8` | Supporting copy                    |
+| Border      | `#334155` | Subtle dividers                    |
 
 ## Planned Structure
 
 ```text
+public/
+
 src/
-  components/
-    Navbar.jsx
-    Hero.jsx
-    TrustedBy.jsx
-    Features.jsx
-    HowItWorks.jsx
-    Pricing.jsx
-    Testimonials.jsx
-    FAQ.jsx
-    CTA.jsx
-    Footer.jsx
-  data/
-    features.js
-    pricing.js
-    faq.js
-    testimonials.js
-  App.jsx
-  main.jsx
-  index.css
+├── assets/
+│   ├── images/
+│   ├── icons/
+│   └── logos/
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   ├── navbar.js
+│   ├── faq.js
+│   └── theme.js
+│
+├── sections/
+│   ├── hero.html
+│   ├── features.html
+│   ├── pricing.html
+│   └── faq.html
+│
+└── main.js
+
+index.html
+vite.config.js
+package.json
+README.md
 ```
 
 ## Page Sections

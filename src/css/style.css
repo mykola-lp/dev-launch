@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+:root {
+  --bg: #e9ebf0;
+  --bg-alt: #0b1220;
+  --surface: #111827;
+  --surface-2: #1f2937;
+  --border: rgba(148, 163, 184, 0.18);
+  --text: #e5eefb;
+  --muted: #94a3b8;
+  --primary: #7c3aed;
+  --accent: #22c55e;
+  --shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background:
+    radial-gradient(circle at top, rgba(124, 58, 237, 0.18), transparent 34%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(124, 58, 237, 0.18), transparent 34%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+main {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.5rem 0 4rem;
+}
+
+section {
+  border: 1px solid var(--border);
+  background: rgba(17, 24, 39, 0.66);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+header,
+footer {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+p {
+  margin: 0;
+  color: var(--muted);
+}

@@ -1,0 +1,32 @@
+{
+  "name": "dev-launch",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint:html": "htmlhint \"**/*.html\"",
+    "format:check": "prettier . --check",
+    "format": "prettier . --write"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.5.0",
+    "globals": "^17.6.0",
+    "htmlhint": "^1.9.2",
+    "prettier": "^3.8.4",
+    "stylelint": "^17.13.0",
+    "stylelint-config-standard": "^40.0.0",
+    "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.1",
+    "lucide": "^1.21.0",
+    "tailwindcss": "^4.3.1"
+  }
+}
