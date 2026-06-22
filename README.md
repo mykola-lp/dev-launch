@@ -20,11 +20,10 @@ DevLaunch helps early-stage startup teams plan, validate, and launch a product f
 
 ## Tech Stack
 
-- React
 - Vite
-- Tailwind CSS
+- Tailwind CSS v4
+- HTML
 - JavaScript
-- Lucide React Icons
 
 ## Design Direction
 
@@ -55,26 +54,34 @@ DevLaunch should feel like a modern B2B SaaS product: clean, confident, and oper
 ## Planned Structure
 
 ```text
+public/
+
 src/
-  components/
-    Navbar.jsx
-    Hero.jsx
-    TrustedBy.jsx
-    Features.jsx
-    HowItWorks.jsx
-    Pricing.jsx
-    Testimonials.jsx
-    FAQ.jsx
-    CTA.jsx
-    Footer.jsx
-  data/
-    features.js
-    pricing.js
-    faq.js
-    testimonials.js
-  App.jsx
-  main.jsx
-  index.css
+├── assets/
+│   ├── images/
+│   ├── icons/
+│   └── logos/
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   ├── navbar.js
+│   ├── faq.js
+│   └── theme.js
+│
+├── sections/
+│   ├── hero.html
+│   ├── features.html
+│   ├── pricing.html
+│   └── faq.html
+│
+└── main.js
+
+index.html
+vite.config.js
+package.json
+README.md
 ```
 
 ## Page Sections
