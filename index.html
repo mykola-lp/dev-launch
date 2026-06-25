@@ -113,7 +113,6 @@
                   aria-label="Open menu"
                   aria-expanded="false"
                   aria-controls="mobile-menu"
-                  aria-expanded="true"
                   data-mobile-menu-toggle
                   class="focus:outline-none text-slate-200 dark:text-white"
                 >
@@ -178,9 +177,75 @@
       </header>
 
       <main id="main-content">
-        <section id="hero">
-          <h1>Launch your startup in days, not months.</h1>
-          <p>Plan your launch, track growth, and keep your team aligned from idea to first customers.</p>
+        <section id="hero" class="hero" aria-labelledby="hero-title">
+          <div class="mx-auto flex flex-col items-center text-center gap-8 px-6 sm:px-8 py-10 sm:py-14 lg:py-20">
+            <p class="text-lg tracking-wide">
+              <span class="mr-2 text-violet-500" aria-hidden="true">✦</span>
+              
+              <span class="font-semibold bg-linear-to-r from-violet-600 to-green-500 bg-clip-text text-transparent">
+                Launch your startup in days, not months
+              </span>
+            </p>
+
+            <h1 id="hero-title" class="font-display font-medium tracking-tight text-slate-900 text-3xl sm:text-5xl lg:text-7xl leading-none">
+              <span class="inline-block">The Fastest</span>
+
+              <span class="relative inline-block whitespace-nowrap text-blue-600">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 418 42"
+                  class="absolute top-2/3 left-0 h-[0.58em] w-full fill-blue-300/70"
+                  preserveAspectRatio="none"
+                >
+                  <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path>
+                </svg>
+
+                <span class="relative">Way to Ship</span>
+              </span>
+
+              <span class="block">
+                Products
+              </span>
+            </h1>
+
+            <p class="max-w-2xl text-lg tracking-tight text-slate-700">
+              Plan your launch, track growth, and keep your team aligned from idea to first customers.
+            </p>
+
+            <div
+              class="mb-4 flex flex-col items-center justify-between gap-6 rounded-xl border border-white/10 bg-white/5 px-3 py-3 backdrop-blur-sm md:flex-row md:px-6 md:py-4"
+              role="group"
+              aria-label="Hero actions and social proof"
+            >
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
+                <a
+                  href="#pricing"
+                  class="inline-flex items-center justify-center rounded-lg bg-(--primary) px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 ease-out hover:brightness-110 hover:shadow-lg hover:shadow-violet-500/25 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/40 focus-visible:ring-offset-2"
+                >
+                  Start free trial
+                </a>
+
+                <a
+                  href="#features"
+                  class="inline-flex items-center justify-center rounded-lg border border-(--border) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--text) transition-all duration-200 ease-out hover:border-(--primary) hover:text-(--primary) active:scale-[0.98]"
+                >
+                  View demo
+                </a>
+              </div>
+
+              <div class="hidden md:block h-8 w-px bg-slate-800"></div>
+
+              <div class="text-sm text-center md:text-left">
+                <span class="font-semibold text-slate-900">
+                  2,500+
+                </span>
+            
+                <span class="text-slate-500">
+                  startups launched
+                </span>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="trusted-by">
