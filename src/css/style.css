@@ -7,6 +7,8 @@
 ========================================= */
 
 :root {
+  --white: #ffffff;
+  --black: #000000;
   --bg: #f6f8fc;
   --bg-alt: #e9edf5;
   --surface: rgba(255, 255, 255, 0.72);
@@ -156,6 +158,24 @@ p {
          leading-6;
 }
 
+/* Step
+----------------------------------------- */
+
+.step-title {
+  color: var(--text);
+
+  @apply text-xl
+         font-semibold
+         tracking-tight;
+}
+
+.step-description {
+  @apply mt-3
+         max-w-prose
+         text-base
+         leading-7;
+}
+
 /* =========================================
    Components
 ========================================= */
@@ -239,3 +259,54 @@ p {
 ----------------------------------------- */
 
 /* @todo: btn's */
+
+/* Steps
+----------------------------------------- */
+
+.step {
+  @apply flex
+         w-full
+         items-center
+         gap-4;
+}
+
+.step-number {
+  color: var(--white);
+  background-color: var(--primary);
+
+  @apply flex
+         size-12
+         shrink-0
+         items-center
+         justify-center
+         rounded-full
+         text-lg
+         font-semibold;
+
+  transition:
+    transform .3s ease,
+    background-color .3s ease;
+}
+
+.step-card {
+  @apply w-full
+         p-6;
+
+  max-width: var(--step-width, 64%);
+
+  transition:
+    max-width .45s ease,
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.step:hover .step-card {
+  border-color: color-mix(in srgb, var(--primary) 30%, var(--border));
+  transform: translateY(-2px);
+  max-width: min(calc(var(--step-width, 64%) + 12%), 82%);
+}
+
+.step:hover .step-number {
+  transform: scale(1.08);
+}
