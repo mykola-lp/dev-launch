@@ -90,13 +90,11 @@ footer {
 h1,
 h2,
 h3 {
-  margin: 0;
   line-height: 1.05;
   letter-spacing: -0.03em;
 }
 
 p {
-  margin: 0;
   color: var(--muted);
 }
 
@@ -207,4 +205,17 @@ p {
   @apply text-center
          text-base
          font-semibold;
+}
+
+.feature-title {
+  color: var(--text);
+
+  @apply text-lg
+         font-semibold;
+}
+
+.feature-description {
+  @apply mt-2
+         text-sm
+         leading-6;
 }
