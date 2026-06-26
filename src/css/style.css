@@ -121,6 +121,9 @@ p {
    Typography
 ========================================= */
 
+/* Section
+----------------------------------------- */
+
 .section-title {
   color: var(--text);
 
@@ -137,9 +140,28 @@ p {
          sm:text-lg;
 }
 
+/* Feature Card
+----------------------------------------- */
+
+.feature-title {
+  color: var(--text);
+
+  @apply text-lg
+         font-semibold;
+}
+
+.feature-description {
+  @apply mt-2
+         text-sm
+         leading-6;
+}
+
 /* =========================================
    Components
 ========================================= */
+
+/* Navigation
+----------------------------------------- */
 
 .desktop-nav-link {
   outline: none;
@@ -150,6 +172,9 @@ p {
   outline: 2px solid var(--primary);
   outline-offset: 4px;
 }
+
+/* Surface
+----------------------------------------- */
 
 .hero { /* @todo: general class with surface-card */
   border: 1px solid var(--border);
@@ -182,6 +207,9 @@ p {
   outline-offset: 4px;
 }
 
+/* Icons
+----------------------------------------- */
+
 .brand-icon {
   color: var(--primary);
   background: color-mix(in srgb, var(--primary) 12%, transparent);
@@ -207,15 +235,7 @@ p {
          font-semibold;
 }
 
-.feature-title {
-  color: var(--text);
+/* Buttons
+----------------------------------------- */
 
-  @apply text-lg
-         font-semibold;
-}
-
-.feature-description {
-  @apply mt-2
-         text-sm
-         leading-6;
-}
+/* @todo: btn's */
