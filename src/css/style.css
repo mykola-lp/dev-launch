@@ -2,6 +2,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* =========================================
+   Theme
+========================================= */
+
 :root {
   --bg: #f6f8fc;
   --bg-alt: #e9edf5;
@@ -14,15 +18,6 @@
   --accent: #22c55e;
   --shadow:
     0 20px 60px rgba(15, 23, 42, 0.12), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
-
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    sans-serif;
 }
 
 :root.dark {
@@ -37,11 +32,12 @@
     0 20px 60px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
 }
 
+/* =========================================
+   Base
+========================================= */
+
 html {
   scroll-behavior: smooth;
-  background:
-    radial-gradient(circle at top, rgba(124, 58, 237, 0.18), transparent 34%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
 }
 
 body {
@@ -51,9 +47,8 @@ body {
   background:
     radial-gradient(circle at top, rgba(124, 58, 237, 0.18), transparent 34%),
     linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
-  font-family: inherit;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 *,
@@ -70,24 +65,8 @@ canvas {
   max-width: 100%;
 }
 
-a {
-  text-decoration: none;
-}
-
-a:focus,
-a:focus-visible {
-  outline: none;
-}
-
-.desktop-nav-link {
-  outline: none;
-  box-shadow: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.desktop-nav-link:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 4px;
+a { /* @todo: not globaly, tlw recommend's class="no-underline" */
+  text-decoration: none; 
 }
 
 button,
@@ -104,7 +83,7 @@ select {
 header,
 main,
 footer {
-  width: min(1120px, calc(100% - 2rem));
+  width: min(1120px, calc(100% - 2rem)); /* @todo: remove bec .section */
   margin: 0 auto;
 }
 
@@ -121,12 +100,111 @@ p {
   color: var(--muted);
 }
 
-@layer components {
-  .hero {
-    border: 1px solid var(--border);
-    background-color: var(--surface);
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(16px);
-    border-radius: 20px;
-  }
+/* =========================================
+   Layout
+========================================= */
+
+.section {
+  @apply mx-auto
+         w-full
+         max-w-7xl
+         px-4
+         sm:px-6
+         lg:px-8;
+}
+
+.section-header {
+  @apply mx-auto
+         max-w-3xl
+         text-center;
+}
+
+/* =========================================
+   Typography
+========================================= */
+
+.section-title {
+  color: var(--text);
+
+  @apply text-3xl
+         font-semibold
+         tracking-tight
+         sm:text-4xl;
+}
+
+.section-description {
+  @apply mt-4
+         text-base
+         leading-7
+         sm:text-lg;
+}
+
+/* =========================================
+   Components
+========================================= */
+
+.desktop-nav-link {
+  outline: none;
+  box-shadow: none;
+}
+
+.desktop-nav-link:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+.hero { /* @todo: general class with surface-card */
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+}
+
+.surface-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+
+  @apply rounded-xl
+         transition-all
+         duration-300
+         ease-out;
+}
+
+.surface-card:hover,
+.surface-card:focus-visible {
+  border-color: color-mix(in srgb, var(--primary) 25%, var(--border));
+  transform: translateY(-2px);
+}
+
+.surface-card:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+.brand-icon {
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+
+  @apply inline-flex
+         size-12
+         items-center
+         justify-center
+         rounded-full;
+}
+
+.brand-icon svg {
+  @apply size-6;
+
+  fill:currentColor;
+}
+
+.brand-title {
+  color: var(--text);
+
+  @apply text-center
+         text-base
+         font-semibold;
 }
