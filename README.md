@@ -527,3 +527,25 @@ Do not create CSS classes that only wrap a few Tailwind utilities unless they re
 ```
 
 The HTML should clearly communicate the component's layout, while CSS should focus on reusable design and advanced styling.
+
+## Class order convention
+
+When combining Tailwind utilities and custom classes:
+
+1. Component class
+2. Tailwind layout utilities
+3. Tailwind spacing and sizing
+4. Tailwind states
+5. Custom design classes
+
+**Example:**
+
+```html
+<div class="hero grid gap-6 p-6 surface-card">
+```
+
+`hero` → component identity
+
+`grid/gap/padding` → Tailwind structure
+
+`surface-card` → reusable design style
