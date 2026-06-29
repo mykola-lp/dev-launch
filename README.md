@@ -220,7 +220,29 @@ Tailwind practice:
 - Icon styling
 - Hover and focus states
 
-### 5. How It Works
+### 5. Dashboard Preview
+
+Build a realistic SaaS dashboard preview that showcases the product interface.
+
+The preview should include:
+
+- Sidebar
+- Header
+- Four statistic cards
+- Analytics chart
+- Recent activity table
+
+Tailwind practice:
+
+- Nested CSS Grid
+- Flexbox layouts
+- Responsive dashboard
+- Reusable UI components
+- Glassmorphism
+- Shadows and gradients
+- Spacing system
+
+### 6. How It Works
 
 Three-step flow:
 
@@ -235,7 +257,7 @@ Tailwind practice:
 - Step indicators
 - Alignment
 
-### 6. Pricing
+### 7. Pricing
 
 Plans:
 
@@ -257,7 +279,7 @@ Tailwind practice:
 - Badges
 - Button variants
 
-### 7. Testimonials
+### 8. Testimonials
 
 Create three concise customer reviews with names, roles, and company names.
 
@@ -268,44 +290,7 @@ Tailwind practice:
 - Avatar placeholders
 - Responsive grid
 
-### 8. FAQ
-
-Accordion questions:
-
-- How does DevLaunch help early-stage teams?
-- Can I use it with my existing tools?
-- Is there a free plan?
-- Can I cancel anytime?
-
-React practice:
-
-- `useState`
-- Conditional rendering
-- Mapping data arrays
-- Accessible accordion controls
-
-### 9. CTA
-
-Headline:
-
-```text
-Ready to launch with a clearer plan?
-```
-
-Button:
-
-```text
-Get started
-```
-
-Tailwind practice:
-
-- Section spacing
-- CTA hierarchy
-- Background accents
-- Centered content
-
-### 10. Footer
+### 9. Footer
 
 Content:
 
@@ -320,19 +305,6 @@ Tailwind practice:
 - Link states
 - Borders and spacing
 
-## MVP Scope
-
-The MVP is complete when:
-
-- All ten sections are implemented.
-- The page is responsive on mobile, tablet, and desktop.
-- Content is stored in data arrays where it improves readability.
-- Components are reusable and clearly named.
-- The FAQ accordion works.
-- Navigation links scroll to the correct sections.
-- The project builds without errors.
-- The app is deployed and linked from the README.
-
 ## Bonus Features
 
 Add these only after the MVP works well:
@@ -343,76 +315,6 @@ Add these only after the MVP works well:
 - Scroll reveal animations.
 - Newsletter form.
 - More detailed dashboard chart mockups.
-
-## Learning Objectives
-
-After completing this project, the developer should be comfortable with:
-
-- Tailwind utility classes.
-- Responsive design.
-- React component composition.
-- Reusable data-driven sections.
-- Basic UI state with `useState`.
-- Landing page structure and conversion flow.
-- GitHub project documentation.
-- Deployment workflow.
-
-## Development Roadmap
-
-### Day 1
-
-- Create the Vite React project.
-- Install and configure Tailwind CSS.
-- Build Navbar and Hero.
-
-### Day 2
-
-- Build Trusted By and Features.
-- Move repeated content into data files.
-
-### Day 3
-
-- Build How It Works and Pricing.
-- Add responsive states.
-
-### Day 4
-
-- Build Testimonials, CTA, and Footer.
-
-### Day 5
-
-- Build FAQ accordion.
-- Add accessible interaction states.
-
-### Day 6
-
-- Polish responsive design.
-- Test mobile, tablet, and desktop layouts.
-
-### Day 7
-
-- Refactor components.
-- Run production build.
-- Deploy the project.
-- Update README with screenshots and live URL.
-
-## Recommended Learning Path
-
-1. Set up Tailwind with Vite using the official Tailwind documentation.
-2. Learn utility-first styling and responsive variants.
-3. Build the landing page section by section.
-4. Refactor repeated UI into reusable components.
-5. Deploy and document the finished result.
-
-## Definition of Done
-
-- The interface matches the planned content and layout.
-- The design looks polished on common screen sizes.
-- The code uses readable React components.
-- Tailwind classes are used consistently.
-- Interactive elements have hover, focus, and active states.
-- The project includes a live deployment link.
-- The README explains the project, stack, setup, and final result.
 
 ## Tailwind CSS Styling Guidelines
 
