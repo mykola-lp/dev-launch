@@ -507,19 +507,18 @@
             </p>
           </div>
 
-          <div id="dashboard-showcase" class="relative">
-            <button type="button" data-dashboard-fullscreen aria-label="Open dashboard preview fullscreen" class="dashboard-expand">
+          <div id="dashboard-showcase" class="relative" role="region" aria-label="Interactive dashboard preview">
+            <button type="button" class="dashboard-expand" data-dashboard-fullscreen aria-label="Open dashboard preview fullscreen" aria-expanded="false">
               Expand
             </button>
 
-            <div class="relative grid min-w-0 overflow-hidden p-4 lg:grid-cols-[260px_minmax(0,1fr)] lg:p-6 mt-12 surface-card">
-              
-              <div class="dashboard-demo-overlay"></div>
+            <div class="relative grid min-w-0 overflow-hidden p-4 lg:grid-cols-[260px_minmax(0,1fr)] lg:p-6 mt-12 surface-card" role="application" aria-label="Dashboard interface preview">
+              <div class="dashboard-demo-overlay" aria-hidden="true"></div>
 
               <!-- Sidebar -->
-              <aside class="flex flex-col gap-6 border-b border-(--border) pb-6 lg:border-r lg:border-b-0 lg:pr-6 lg:pb-0">
+              <aside class="flex flex-col gap-6 border-b border-(--border) pb-6 lg:border-r lg:border-b-0 lg:pr-6 lg:pb-0" aria-label="Dashboard sidebar">
                 <!-- Logo -->
-                <div class="text-xl font-semibold">
+                <div class="text-xl font-semibold" aria-label="Brand">
                   <a href="#" class="brand-link">
                     <svg
                       class="brand-icon"
@@ -539,13 +538,14 @@
                 <!-- End Logo -->
 
                 <!-- Content -->
-                <nav class="flex flex-col gap-2 dashboard-nav">
-                  <a href="javascript:void(0)" data-demo-nav class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg">
+                <nav class="flex flex-col gap-2 dashboard-nav" aria-label="Main dashboard navigation">
+                  <a data-demo-nav class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24" height="24" viewBox="0 0 24 24" fill="none" 
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" 
                       stroke-linejoin="round"
+                      aria-hidden="true"
                       class="shrink-0 size-4"
                     >
                       <rect width="7" height="9" x="3" y="3" rx="1"/>
@@ -556,12 +556,13 @@
                     Dashboard
                   </a>
             
-                  <a href="javascript:void(0)" data-demo-nav class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg">
+                  <a href="#" data-demo-nav class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24" height="24" viewBox="0 0 24 24" fill="none" 
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" 
                       stroke-linejoin="round"
+                      aria-hidden="true"
                       class="shrink-0 size-4"
                     >
                       <path d="M3 3v18h18"/>
@@ -570,12 +571,13 @@
                     Analytics
                   </a>
 
-                  <a href="javascript:void(0)" data-demo-nav class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg">
+                  <a href="#" data-demo-nav class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24" height="24" viewBox="0 0 24 24" fill="none" 
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" 
                       stroke-linejoin="round"
+                      aria-hidden="true"
                       class="shrink-0 size-4"
                     >
                       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
@@ -586,12 +588,13 @@
                     Customers
                   </a>
 
-                  <a href="javascript:void(0)" data-demo-nav class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg">
+                  <a href="#" data-demo-nav class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24" height="24" viewBox="0 0 24 24" fill="none" 
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" 
                       stroke-linejoin="round"
+                      aria-hidden="true"
                       class="shrink-0 size-4"
                     >
                       <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
@@ -599,12 +602,13 @@
                     Messages
                   </a>
 
-                  <a href="javascript:void(0)" data-demo-nav class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg">
+                  <a href="#" data-demo-nav class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm rounded-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="24" height="24" viewBox="0 0 24 24" fill="none" 
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" 
                       stroke-linejoin="round"
+                      aria-hidden="true"
                       class="shrink-0 size-4"
                     >
                       <circle cx="12" cy="12" r="3"/>
@@ -616,8 +620,8 @@
                 <!-- End Content -->
 
                 <!-- Content -->
-                <div class="mt-auto p-4 surface-card">
-                  <h3 class="font-semibold mb-2">Storage</h3>
+                <div class="mt-auto p-4 surface-card" aria-labelledby="storage-title">
+                  <h3 id="storage-title" class="font-semibold mb-2">Storage</h3>
 
                   <p class="text-2xl font-bold">48 GB</p>
                   <p class="text-sm text-gray-500 mb-3">of 100 GB used</p>
@@ -631,13 +635,13 @@
               <!-- End Sidebar -->
 
               <!-- Main -->
-              <div class="flex min-w-0 flex-col gap-6 pt-6 lg:pl-6 lg:pt-0">
+              <div class="flex min-w-0 flex-col gap-6 pt-6 lg:pl-6 lg:pt-0" aria-label="Dashboard content">
                 <!-- Header -->
                 <div class="surface-card flex min-w-0 flex-col gap-4 p-4 sm:p-6 md:flex-row md:flex-wrap md:items-center md:justify-between">
                   <div>
-                    <h3 class="text-xl font-semibold sm:text-2xl">
+                    <h2 class="text-xl font-semibold sm:text-2xl">
                       Welcome back 👋
-                    </h3>
+                    </h2>
 
                     <p class="mt-2 text-sm">
                       Here's what's happening today.
@@ -645,34 +649,36 @@
                   </div>
 
                   <div class="flex min-w-0 flex-wrap items-center gap-3">
-                    <form class="w-full min-w-0 md:w-auto">
+                    <form class="w-full min-w-0 md:w-auto" role="search">
                       <input
                         type="search"
                         placeholder="Search..."
                         data-demo-search
+                        aria-label="Search dashboard"
                         class="w-full min-w-0 rounded-xl border border-black/5 bg-white/10 px-4 py-2 outline-none transition-all duration-200 hover:border-black/10 focus:border-(--primary) focus:ring-4 focus:ring-violet-500/10"
                       >
                     </form>
 
-                    <button class="dashboard-notification relative flex shrink-0 size-10 items-center justify-center rounded-xl border border-black/10 bg-white/70 text-slate-600 backdrop-blur-sm">
+                    <button class="dashboard-notification relative flex shrink-0 size-10 items-center justify-center rounded-xl border border-black/10 bg-white/70 text-slate-600 backdrop-blur-sm" aria-label="View notifications">
                       <span class="absolute right-2 top-2 size-2 rounded-full bg-red-500"></span>
 
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="size-5"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
+                        aria-hidden="true"
+                        class="size-5"
                       >
                         <path d="M15 17h5l-1.4-1.4A2 2 0 0 1 18 14.2V11a6 6 0 1 0-12 0v3.2a2 2 0 0 1-.6 1.4L4 17h11z"/>
                         <path d="M9 17a3 3 0 0 0 6 0"/>
                       </svg>
                     </button>
 
-                    <button class="flex shrink-0 items-center gap-3 rounded-xl border border-black/10 bg-white/70 p-3 text-left backdrop-blur-sm dark:border-white/10 dark:bg-white/5">
+                    <button class="flex shrink-0 items-center gap-3 rounded-xl border border-black/10 bg-white/70 p-3 text-left backdrop-blur-sm dark:border-white/10 dark:bg-white/5" aria-label="Open user menu">
                       <span class="flex h-10 w-10 items-center justify-center rounded-full bg-violet-100 text-violet-600 dark:bg-violet-500/15">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -706,7 +712,7 @@
                 </div>
 
                 <!-- Statistics -->
-                <div class="grid min-w-0 gap-4 sm:grid-cols-2 xl:grid-cols-2">
+                <div class="grid min-w-0 gap-4 sm:grid-cols-2 xl:grid-cols-2" aria-label="Dashboard statistics">
 
                   <!-- Browsers -->
                   <article class="p-4 surface-card flex flex-col gap-5">
@@ -731,6 +737,7 @@
                           fill="none" viewBox="0 0 24 24"
                           stroke="currentColor"
                           stroke-width="2"
+                          aria-hidden="true"
                           class="size-5"
                         >
                           <circle cx="12" cy="12" r="9"/>
@@ -828,7 +835,14 @@
                       </div>
 
                       <span class="flex size-11 items-center justify-center rounded-xl bg-sky-500/10 text-sky-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          aria-hidden="true"
+                          class="size-5"
+                        >
                           <path d="M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 0 0-7.07-7.07L11 5"/>
                           <path d="M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 0 0 7.07 7.07L13 19"/>
                         </svg>
@@ -896,6 +910,7 @@
                           stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
+                          aria-hidden="true"
                           class="size-5"
                         >
                           <path d="M3 7.5A2.5 2.5 0 0 1 5.5 5h11A2.5 2.5 0 0 1 19 7.5V8h1a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-1v.5A2.5 2.5 0 0 1 16.5 19h-11A2.5 2.5 0 0 1 3 16.5v-9Z"/>
