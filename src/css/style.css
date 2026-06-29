@@ -393,19 +393,46 @@ p {
   z-index: 100;
   opacity: 0;
 
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(.96);
+  color: var(--white);
+  background-color: var(--primary);
+  border: 1px solid color-mix(in srgb, var(--primary) 70%,white);
+
+  box-shadow: 0 10px 30px rgba(124,58,237,.35);
+  backdrop-filter: blur(12px);
 
   transition:
     opacity .25s ease,
-    transform .25s ease;
+    transform .25s ease,
+    background-color .25s ease,
+    box-shadow .25s ease;
 
-  color: var(--text);
-  background-color: var(--surface);
-  border: 1px solid var(--border);
+  @apply inline-flex
+    items-center
+    gap-2
+    rounded-xl
+    px-4
+    py-2
+    text-sm
+    font-medium
+    cursor-pointer;
+}
 
+.dashboard-expand:hover {
+  background-color: color-mix(in srgb, var(--primary) 85%, white);
+  box-shadow: 0 14px 35px rgba(124,58,237,.45);
+}
+
+.dashboard-expand:active {
+  transform: scale(.96);
+}
+
+.dashboard-expand:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
 }
 
 #dashboard-showcase:hover .dashboard-expand {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
