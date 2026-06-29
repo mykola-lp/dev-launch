@@ -413,3 +413,139 @@ After completing this project, the developer should be comfortable with:
 - Interactive elements have hover, focus, and active states.
 - The project includes a live deployment link.
 - The README explains the project, stack, setup, and final result.
+
+## Tailwind CSS Styling Guidelines
+
+This project follows a hybrid approach that combines Tailwind CSS utilities with custom CSS. The goal is to keep layouts and component structure visible in the HTML while moving design tokens, complex visual effects, and reusable design patterns into CSS. These guidelines help maintain consistency, readability, and make the codebase easier to scale, especially when migrating to React.
+
+### Use Tailwind for Layout & Structure
+
+Use Tailwind utility classes for properties that define the structure, position, and behavior of elements.
+
+**Examples:**
+
+* Display (`flex`, `grid`, `block`, `hidden`)
+* Flexbox (`items-center`, `justify-between`, `flex-col`, `flex-wrap`)
+* Grid (`grid-cols-*`, `col-span-*`)
+* Spacing (`p-*`, `m-*`, `gap-*`, `space-x-*`, `space-y-*`)
+* Sizing (`w-*`, `h-*`, `max-w-*`, `min-h-*`)
+* Positioning (`relative`, `absolute`, `top-*`, `z-*`)
+* Overflow (`overflow-hidden`, `overflow-auto`, `truncate`)
+* Visibility (`hidden`, `visible`, `block`, `inline`)
+* Responsive breakpoints (`sm:`, `md:`, `lg:`, `xl:`)
+* Borders & radius (`border`, `rounded-*`)
+* Local typography (`text-*`, `font-*`, `leading-*`, `tracking-*`)
+* Local states (`hover:*`, `focus:*`, `active:*`, `disabled:*`)
+
+---
+
+### Use CSS for Theme & Design
+
+Keep global design decisions and visual styling in CSS.
+
+**Examples:**
+
+* Dark mode variables (`:root.dark`, `.dark`)
+* CSS variables (`--primary`, `--surface`, `--border`, `--text`)
+* Theme colors (`color`, `background-color`, `border-color`)
+* Custom shadows (`box-shadow`)
+* Custom backgrounds (`background`, `background-image`)
+* Gradient systems (`linear-gradient()`, `radial-gradient()`)
+* Custom borders (`border-color`, complex border styles)
+* Glassmorphism effects (`backdrop-filter`, blur, transparency)
+* Global typography styles (`font-family`, base text styles)
+* Design tokens (`spacing`, `radius`, `shadow`, `color` variables)
+
+### Use CSS for Advanced Effects
+
+Whenever a style becomes difficult to express with utilities or requires multiple CSS features, prefer plain CSS.
+
+**Examples:**
+
+* `linear-gradient()`
+* `radial-gradient()`
+* `color-mix()`
+* `backdrop-filter`
+* `filter`
+* `mask`
+* `clip-path`
+* `mix-blend-mode`
+* `isolation`
+* Complex `transform`
+* Custom `transition`
+* `@keyframes`
+* `animation`
+
+---
+
+### Use CSS for Pseudo-elements
+
+Pseudo-elements should always remain in CSS.
+
+**Examples:**
+
+* `::before`
+* `::after`
+* `::selection`
+* `::marker`
+
+---
+
+### Create CSS Classes Only for Reusable Design Components
+
+If a group of styles represents a reusable design pattern, extract it into a CSS class.
+
+**Examples:**
+
+* `.surface-card`
+* `.glass-panel`
+* `.hero`
+* `.btn-primary`
+* `.badge`
+* `.alert`
+
+Avoid creating CSS classes for layouts that are only used once.
+
+---
+
+### Avoid Unnecessary Abstraction
+
+Do not create CSS classes that only wrap a few Tailwind utilities unless they represent a reusable component.
+
+**Prefer**
+
+```html
+<div class="flex flex-col gap-6 lg:pl-6">
+```
+
+**Instead of**
+
+```css
+.dashboard-main {
+  @apply flex flex-col gap-6 lg:pl-6;
+}
+```
+
+The HTML should clearly communicate the component's layout, while CSS should focus on reusable design and advanced styling.
+
+## Class order convention
+
+When combining Tailwind utilities and custom classes:
+
+1. Component class
+2. Tailwind layout utilities
+3. Tailwind spacing and sizing
+4. Tailwind states
+5. Custom design classes
+
+**Example:**
+
+```html
+<div class="hero grid gap-6 p-6 surface-card">
+```
+
+`hero` → component identity
+
+`grid/gap/padding` → Tailwind structure
+
+`surface-card` → reusable design style
