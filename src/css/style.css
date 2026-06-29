@@ -17,6 +17,7 @@
   --text: #0f172a;
   --muted: #475569;
   --primary: #7c3aed;
+  --primary-light: rgba(124, 58, 237, 0.08);
   --accent: #22c55e;
   --shadow:
     0 20px 60px rgba(15, 23, 42, 0.12), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
@@ -216,15 +217,14 @@ p {
          ease-out;
 }
 
-.surface-card:hover,
-.surface-card:focus-visible {
-  border-color: color-mix(in srgb, var(--primary) 25%, var(--border));
-  transform: translateY(-2px);
-}
-
 .surface-card:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 4px;
+}
+
+.surface-hover:hover {
+  border-color: color-mix(in srgb, var(--primary) 25%, var(--border));
+  transform: translateY(-2px);
 }
 
 /* Icons
@@ -309,4 +309,103 @@ p {
 
 .step:hover .step-number {
   transform: scale(1.08);
+}
+
+/* Dashboard
+----------------------------------------- */
+
+.brand-link {
+  color: var(--text);
+
+  @apply inline-flex
+    items-center
+    gap-3
+    text-xl
+    font-semibold
+    no-underline;
+}
+
+.brand-icon {
+  color: var(--primary);
+  fill: currentColor;
+
+  @apply size-8
+    shrink-0;
+}
+
+.dashboard-nav a {
+  color: var(--muted);
+}
+
+.dashboard-nav a:hover,
+.dashboard-nav a.dashboard-demo-active {
+  color: var(--text);
+  background-color: var(--primary-light);
+
+  transition:
+    transform .2s ease,
+    background-color .2s ease;
+}
+
+.dashboard-demo-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+
+  background: rgba(255,255,255,.35);
+  backdrop-filter: blur(2px);
+
+  opacity: 1;
+  pointer-events: none;
+  transition:opacity .4s ease;
+}
+
+
+.dashboard-demo-overlay.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Dashboard fullscreen
+----------------------------------------- */
+
+#dashboard-showcase:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px;
+}
+
+#dashboard-showcase:fullscreen .dashboard-demo-overlay {
+  display: none;
+}
+
+#dashboard-showcase:fullscreen > .relative {
+  min-height: 100%;
+  overflow: visible;
+}
+
+.dashboard-expand {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  opacity: 0;
+
+  transform: translateY(-8px);
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease;
+
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+
+}
+
+#dashboard-showcase:hover .dashboard-expand {
+  opacity: 1;
+  transform: translateY(0);
 }
