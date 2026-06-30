@@ -488,3 +488,105 @@ p {
 
   transform: translateY(-2px);
 }
+
+/* Testimonials
+----------------------------------------- */
+
+.testimonial {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+/* Card hover
+----------------------------------------- */
+
+.testimonial:hover {
+  border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 24px 70px rgba(15, 23, 42, 0.16),
+    0 0 0 1px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+:root.dark .testimonial:hover {
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, .45),
+    0 0 0 1px color-mix(in srgb, var(--primary) 25%, transparent);
+}
+
+/* Accessibility
+----------------------------------------- */
+
+.testimonial:focus-within {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+/* Avatar
+----------------------------------------- */
+
+.testimonial-avatar {
+  overflow: hidden;
+
+  border-radius: 999px;
+  border: 3px solid color-mix(in srgb, var(--primary) 30%, transparent);
+
+  background-color: var(--surface-2);
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease;
+}
+
+
+.testimonial:hover .testimonial-avatar {
+  transform: scale(1.05);
+  border-color: var(--primary);
+}
+
+/* Social icons
+----------------------------------------- */
+
+.testimonial-social {
+  color: var(--muted);
+
+  @apply inline-flex
+    size-10
+    items-center
+    justify-center
+    rounded-full;
+
+  transition:
+    color .25s ease,
+    background-color .25s ease,
+    transform .25s ease;
+}
+
+
+.testimonial-social svg {
+  @apply size-5;
+
+  fill: currentColor;
+}
+
+
+.testimonial-social:hover {
+  color: var(--primary);
+
+  background-color: var(--primary-light);
+
+  transform: translateY(-2px);
+}
+
+
+.testimonial-social:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
