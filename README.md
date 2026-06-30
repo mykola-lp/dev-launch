@@ -458,11 +458,12 @@ The HTML should clearly communicate the component's layout, while CSS should foc
 
 When combining Tailwind utilities and custom classes:
 
-1. Component class
-2. Tailwind layout utilities
-3. Tailwind spacing and sizing
-4. Tailwind states
-5. Custom design classes
+1. Component class(es)
+2. Tailwind layout & positioning
+3. Tailwind spacing & sizing
+4. Tailwind typography
+5. Tailwind state variants (hover:, focus:, active:, ...)
+6. Utility/helper classes
 
 **Example:**
 

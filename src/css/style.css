@@ -19,8 +19,7 @@
   --primary: #7c3aed;
   --primary-light: rgba(124, 58, 237, 0.08);
   --accent: #22c55e;
-  --shadow:
-    0 20px 60px rgba(15, 23, 42, 0.12), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  --shadow: 0 20px 60px rgba(15, 23, 42, 0.12), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
 }
 
 :root.dark {
@@ -31,8 +30,7 @@
   --border: rgba(148, 163, 184, 0.18);
   --text: #e5eefb;
   --muted: #94a3b8;
-  --shadow:
-    0 20px 60px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
 }
 
 /* =========================================
@@ -68,10 +66,6 @@ canvas {
   max-width: 100%;
 }
 
-a { /* @todo: not globaly, tlw recommend's class="no-underline" */
-  text-decoration: none; 
-}
-
 button,
 input,
 textarea,
@@ -86,7 +80,7 @@ select {
 header,
 main,
 footer {
-  width: min(1120px, calc(100% - 2rem)); /* @todo: remove bec .section */
+  width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
@@ -180,6 +174,15 @@ p:not([class*="text-"]) {
 /* =========================================
    Components
 ========================================= */
+
+/* Skip link
+----------------------------------------- */
+
+.skip-link {
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: var(--shadow);
+}
 
 /* Navigation
 ----------------------------------------- */
