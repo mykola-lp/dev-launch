@@ -590,3 +590,44 @@ p {
   outline: 2px solid var(--primary);
   outline-offset: 4px;
 }
+
+/* Footer
+----------------------------------------- */
+
+.footer-link {
+  color: var(--muted);
+
+  transition:
+    color .2s ease;
+}
+
+.footer-link:hover {
+  color: var(--text);
+}
+
+.footer-social {
+  color: var(--muted);
+
+  @apply inline-flex
+    size-10
+    items-center
+    justify-center
+    rounded-full;
+
+  transition:
+    color .25s ease,
+    background-color .25s ease,
+    transform .25s ease;
+}
+
+.footer-social svg {
+  @apply size-5;
+
+  fill: currentColor;
+}
+
+.footer-social:hover {
+  color: var(--primary);
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+}
