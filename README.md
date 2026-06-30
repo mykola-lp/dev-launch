@@ -290,7 +290,31 @@ Tailwind practice:
 - Avatar placeholders
 - Responsive grid
 
-### 9. Footer
+### 9. Call To Action (CTA)
+
+Final conversion section encouraging users to start building with DevLaunch.
+
+Content:
+
+- Strong headline focused on launching products faster.
+- Short supporting description explaining the value.
+- Primary CTA button:
+  - Start building
+  - Get started
+- Secondary CTA button:
+  - View demo
+  - Explore features
+
+Tailwind practice:
+
+- Flex layout
+- Responsive spacing
+- Background utilities
+- Button variants
+- Decorative absolute elements
+- Hover and focus states
+
+### 10. Footer
 
 Content:
 

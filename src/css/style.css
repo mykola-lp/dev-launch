@@ -97,7 +97,7 @@ h3 {
   letter-spacing: -0.03em;
 }
 
-p {
+p:not([class*="text-"]) {
   color: var(--muted);
 }
 
