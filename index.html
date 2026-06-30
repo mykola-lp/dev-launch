@@ -1459,8 +1459,220 @@
           </div>
         </section>
 
-        <section id="testimonials">
-          <p>Testimonials</p>
+        <section id="testimonials" class="section rounded-3xl bg-(--surface-2) py-16" aria-labelledby="testimonials-title">
+          <div class="section-header">
+            <h2 id="testimonials-title" class="section-title">
+              Testimonials
+            </h2>
+
+            <p class="section-description">
+              Trusted by product teams building faster, collaborating better, and shipping with confidence.
+            </p>
+          </div>
+
+          <!-- Customer testimonials -->
+          <div class="mt-14 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+            <article class="testimonial flex flex-col items-center rounded-2xl p-8 text-center">
+              <div class="testimonial-avatar">
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  alt="Portrait of Sarah Johnson"
+                  class="h-28 w-28 object-cover"
+                  loading="lazy"
+                >
+              </div>
+
+              <h3 class="mt-6 text-xl font-semibold text-(--text)">
+                Sarah Johnson
+              </h3>
+
+              <p class="mt-1 text-sm">
+                Product Manager · NovaLabs
+              </p>
+
+              <blockquote class="mt-6">
+                <p class="leading-7">
+                  “Roadmaps that once took days now come together in just a few hours. Our team finally stays aligned from planning to release.”
+                </p>
+              </blockquote>
+
+              <!-- Social links -->
+              <ul class="mt-8 flex items-center justify-center gap-5">
+                <!-- LinkedIn -->
+                <li>
+                  <a
+                    href="#"
+                    class="testimonial-social"
+                    aria-label="Visit Sarah Johnson's LinkedIn profile"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4.98 3.5A2.48 2.48 0 1 0 5 8.46a2.48 2.48 0 0 0-.02-4.96ZM3 9h4v12H3V9Zm7 0h3.84v1.71h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.64 4.76 6.07V21h-4v-5.52c0-1.32-.02-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.92V21h-4V9Z"/>
+                    </svg>
+                  </a>
+                </li>
+
+                <!-- Instagram -->
+                <li>
+                  <a
+                    href="#"
+                    class="testimonial-social"
+                    aria-label="Visit Sarah Johnson's Instagram profile"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7Zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10Zm-5 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm5.5-2.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+                    </svg>
+                  </a>
+                </li>
+
+                <!-- GitHub -->
+                <li>
+                  <a
+                    href="#"
+                    class="testimonial-social"
+                    aria-label="Visit Sarah Johnson's GitHub profile"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </article>
+
+            <article class="testimonial flex flex-col items-center rounded-2xl p-8 text-center">
+              <div class="testimonial-avatar">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="Portrait of Michael Chen"
+                  class="h-28 w-28 object-cover"
+                  loading="lazy"
+                >
+              </div>
+
+              <h3 class="mt-6 text-xl font-semibold text-(--text)">
+                Michael Chen
+              </h3>
+
+              <p class="mt-1 text-sm">
+                Founder · OrbitFlow
+              </p>
+
+              <blockquote class="mt-6">
+                <p class="text-base leading-7">
+                  “The analytics dashboard gave us complete visibility into every product decision. It quickly became an essential part of our workflow.”
+                </p>
+              </blockquote>
+
+              <!-- Social links -->
+              <ul class="mt-8 flex items-center justify-center gap-5">
+                <!-- LinkedIn -->
+                <li>
+                  <a
+                    href="#"
+                    class="testimonial-social"
+                    aria-label="Visit Michael Chen's LinkedIn profile"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4.98 3.5A2.48 2.48 0 1 0 5 8.46a2.48 2.48 0 0 0-.02-4.96ZM3 9h4v12H3V9Zm7 0h3.84v1.71h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.64 4.76 6.07V21h-4v-5.52c0-1.32-.02-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.92V21h-4V9Z"/>
+                    </svg>
+                  </a>
+                </li>
+
+                <!-- Instagram -->
+                <li>
+                  <a
+                    href="#"
+                    class="testimonial-social"
+                    aria-label="Visit Michael Chen's Instagram profile"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7Zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10Zm-5 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm5.5-2.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+                    </svg>
+                  </a>
+                </li>
+
+                <!-- GitHub -->
+                <li>
+                  <a
+                    href="#"
+                    class="testimonial-social"
+                    aria-label="Visit Michael Chen's GitHub profile"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </article>
+
+            <article class="testimonial flex flex-col items-center rounded-2xl p-8 text-center">
+              <div class="testimonial-avatar">
+                <img
+                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                    alt="Portrait of Emily Rodriguez"
+                    class="h-28 w-28 object-cover"
+                    loading="lazy"
+                  >
+              </div>
+
+              <h3 class="mt-6 text-xl font-semibold text-(--text)">
+                Sarah Johnson
+              </h3>
+
+              <p class="mt-1 text-sm">
+                Product Manager · NovaLabs
+              </p>
+
+              <blockquote class="mt-6">
+                <p class="leading-7">
+                  “Roadmaps that once took days now come together in just a few hours. Our team finally stays aligned from planning to release.”
+                </p>
+              </blockquote>
+
+              <!-- Social links -->
+              <ul class="mt-8 flex items-center justify-center gap-5">
+                <!-- LinkedIn -->
+                <li>
+                  <a
+                    href="#"
+                    class="testimonial-social"
+                    aria-label="Visit Emily Rodriguez's  LinkedIn profile"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M4.98 3.5A2.48 2.48 0 1 0 5 8.46a2.48 2.48 0 0 0-.02-4.96ZM3 9h4v12H3V9Zm7 0h3.84v1.71h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.64 4.76 6.07V21h-4v-5.52c0-1.32-.02-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.92V21h-4V9Z"/>
+                    </svg>
+                  </a>
+                </li>
+
+                <!-- Instagram -->
+                <li>
+                  <a
+                    href="#"
+                    class="testimonial-social"
+                    aria-label="Visit Emily Rodriguez's Instagram profile"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7Zm10 2c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3h10Zm-5 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm5.5-2.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/>
+                    </svg>
+                  </a>
+                </li>
+
+                <!-- GitHub -->
+                <li>
+                  <a
+                    href="#"
+                    class="testimonial-social"
+                    aria-label="Visit Emily Rodriguez's GitHub profile"
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </article>
+          </div>
         </section>
 
         <section id="faq">
