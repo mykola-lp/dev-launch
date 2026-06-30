@@ -184,8 +184,54 @@ p:not([class*="text-"]) {
   box-shadow: var(--shadow);
 }
 
+/* Brand
+----------------------------------------- */
+
+.brand-title {
+  color: var(--text);
+
+  @apply text-center
+         text-base
+         font-semibold;
+}
+
+.brand-icon {
+  color: var(--primary);
+  background-color: color-mix(in srgb, var(--primary) 12%, transparent);
+
+  @apply inline-flex
+         size-8
+         items-center
+         justify-center
+         rounded-full;
+
+  fill: currentColor;
+}
+
+.brand-link {
+  color: var(--text);
+
+  @apply flex
+         items-center
+         gap-2
+         text-xl
+         font-semibold
+         shrink-0
+         no-underline;
+}
+
 /* Navigation
 ----------------------------------------- */
+
+.desktop-nav-item {
+  transition: text-decoration-color .3s ease;
+}
+
+.desktop-nav-item:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
 
 .desktop-nav-link {
   outline: none;
@@ -195,6 +241,90 @@ p:not([class*="text-"]) {
 .desktop-nav-link:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 4px;
+}
+
+/* Theme switcher
+----------------------------------------- */
+
+.theme-toggle {
+  color: var(--text);
+  background-color:rgba(255,255,255,.05);
+
+  border:1px solid var(--border);
+  transition: background-color .3s ease;
+
+  @apply inline-flex
+         h-10
+         w-10
+         items-center
+         justify-center
+         rounded-full
+         cursor-pointer;
+}
+
+.theme-toggle:hover {
+  background-color: var(--primary-light);
+}
+
+.mobile-theme-toggle {
+  color: var(--white);
+  border-color: rgba(255,255,255,.1);
+  background-color: rgba(255,255,255,.05);
+}
+
+.mobile-menu-toggle {
+  color:var(--text);
+
+  @apply cursor-pointer;
+}
+
+.mobile-menu-toggle svg {
+  @apply size-10;
+
+  transition: transform .2s ease;
+}
+
+.mobile-menu-toggle:active svg {
+  transform:scale(1.1);
+}
+
+/* Mobile menu
+----------------------------------------- */
+
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 20px;
+
+  background-color: var(--primary);
+
+  padding: 0 1rem;
+
+  transform: translateY(-10px);
+
+  transition:
+    max-height .35s ease,
+    opacity .25s ease,
+    transform .25s ease,
+    visibility .25s ease,
+    padding .35s ease;
+
+  backdrop-filter: blur(16px);
+}
+
+.mobile-menu.is-open {
+  max-height: 600px;
+
+  opacity: 1;
+  visibility: visible;
+
+  padding: 1rem;
+
+  transform: translateY(0);
 }
 
 /* Surface
@@ -230,38 +360,78 @@ p:not([class*="text-"]) {
   transform: translateY(-2px);
 }
 
-/* Icons
------------------------------------------ */
-
-.brand-icon {
-  color: var(--primary);
-  background: color-mix(in srgb, var(--primary) 12%, transparent);
-
-  @apply inline-flex
-         size-12
-         items-center
-         justify-center
-         rounded-full;
-}
-
-.brand-icon svg {
-  @apply size-6;
-
-  fill:currentColor;
-}
-
-.brand-title {
-  color: var(--text);
-
-  @apply text-center
-         text-base
-         font-semibold;
-}
-
 /* Buttons
 ----------------------------------------- */
 
-/* @todo: btn's */
+.btn {
+  @apply inline-flex
+         items-center
+         justify-center
+         cursor-pointer
+         rounded-xl
+         px-5
+         py-3
+         font-medium;
+
+  transition:
+    transform .3s ease,
+    background-color .3s ease,
+    color .3s ease,
+    box-shadow .3s ease;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+/* Primary
+----------------------------------------- */
+
+.btn-primary {
+  color: var(--white);
+  background-color: var(--primary);
+
+  @apply px-6
+         py-2.5
+         font-semibold;
+}
+
+.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--primary) 85%, var(--primary-light));
+}
+
+/* Secondary
+----------------------------------------- */
+
+.btn-secondary {
+  color: var(--text);
+  border: 1px solid var(--border);
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  color: var(--white);
+  background-color: var(--primary);
+  border-color: var(--primary-light);
+
+  transform: translateY(-2px);
+}
+
+/* Ghost
+----------------------------------------- */
+
+.btn-ghost {
+  color: var(--text);
+
+  @apply px-6
+         py-2.5
+         font-semibold;
+}
+
+.btn-ghost:hover {
+  color: var(--primary);
+}
 
 /* Steps
 ----------------------------------------- */
@@ -316,25 +486,6 @@ p:not([class*="text-"]) {
 
 /* Dashboard
 ----------------------------------------- */
-
-.brand-link {
-  color: var(--text);
-
-  @apply inline-flex
-    items-center
-    gap-3
-    text-xl
-    font-semibold
-    no-underline;
-}
-
-.brand-icon {
-  color: var(--primary);
-  fill: currentColor;
-
-  @apply size-8
-    shrink-0;
-}
 
 .dashboard-nav a {
   color: var(--muted);
@@ -446,50 +597,6 @@ p:not([class*="text-"]) {
 .pricing-featured {
   border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
   box-shadow: var(--shadow), 0 0 0 2px color-mix(in srgb, var(--primary) 35%, transparent);
-}
-
-/* Buttons
------------------------------------------ */
-
-.btn {
-  @apply inline-flex
-         items-center
-         justify-center
-         rounded-xl
-         px-5
-         py-3
-         font-medium
-         transition-all
-         duration-300;
-}
-
-.btn-primary {
-  color: var(--white);
-  background-color: var(--primary);
-}
-
-.btn-primary:hover {
-  background-color: color-mix(in srgb, var(--primary) 85%, white);
-
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-
-.btn:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 4px;
-}
-
-.btn-primary:hover,
-.btn-secondary:hover {
-  color: var(--white);
-  background-color: var(--primary);
-
-  transform: translateY(-2px);
 }
 
 /* Testimonials
