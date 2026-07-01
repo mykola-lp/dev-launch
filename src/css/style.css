@@ -330,14 +330,6 @@ p:not([class*="text-"]) {
 /* Surface
 ----------------------------------------- */
 
-.hero { /* @todo: general class with surface-card */
-  border: 1px solid var(--border);
-  background-color: var(--surface);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(16px);
-  border-radius: 20px;
-}
-
 .surface-card {
   background-color: var(--surface);
   border: 1px solid var(--border);
@@ -364,10 +356,7 @@ p:not([class*="text-"]) {
 ----------------------------------------- */
 
 .btn {
-  @apply inline-flex
-         items-center
-         justify-center
-         cursor-pointer
+  @apply cursor-pointer
          rounded-xl
          px-5
          py-3
@@ -377,16 +366,31 @@ p:not([class*="text-"]) {
     transform .3s ease,
     background-color .3s ease,
     color .3s ease,
-    box-shadow .3s ease;
+    box-shadow .3s ease,
 }
+
+/* States */
 
 .btn:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 4px;
 }
 
-/* Primary
------------------------------------------ */
+/* Variants */
+
+.btn-compact {
+  color: var(--text);
+  border: 1px solid var(--border);
+
+  @apply cursor-pointer
+         rounded-lg
+         px-5
+         py-2.5
+         text-sm
+         font-semibold;
+
+  transition: all 200ms ease-out;
+}
 
 .btn-primary {
   color: var(--white);
@@ -397,17 +401,33 @@ p:not([class*="text-"]) {
          font-semibold;
 }
 
-.btn-primary:hover {
-  background-color: color-mix(in srgb, var(--primary) 85%, var(--primary-light));
-}
-
-/* Secondary
------------------------------------------ */
-
 .btn-secondary {
   color: var(--text);
   border: 1px solid var(--border);
   background-color: transparent;
+}
+
+.btn-ghost {
+  color: var(--text);
+
+  @apply px-6
+         py-2.5
+         font-semibold;
+}
+
+/* Variant states */
+
+.btn-compact:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-compact:active {
+  transform: scale(.98);
+}
+
+.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--primary) 85%, var(--primary-light));
 }
 
 .btn-secondary:hover {
@@ -418,19 +438,31 @@ p:not([class*="text-"]) {
   transform: translateY(-2px);
 }
 
-/* Ghost
------------------------------------------ */
-
-.btn-ghost {
-  color: var(--text);
-
-  @apply px-6
-         py-2.5
-         font-semibold;
-}
-
 .btn-ghost:hover {
   color: var(--primary);
+}
+
+/*  Hero
+----------------------------------------- */
+
+.hero {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.hero-gradient-text {
+  color: transparent;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  background-clip: text;
+}
+
+.hero-actions {
+  background-color: var(--surface);
+  border-color: var(--border);
+  backdrop-filter: blur(16px);
 }
 
 /* Steps
