@@ -7,30 +7,117 @@
 ========================================= */
 
 :root {
-  --white: #ffffff;
-  --black: #000000;
-  --bg: #f6f8fc;
-  --bg-alt: #e9edf5;
-  --surface: rgba(255, 255, 255, 0.72);
-  --surface-2: rgba(248, 250, 252, 0.88);
-  --border: rgba(15, 23, 42, 0.12);
-  --text: #0f172a;
-  --muted: #475569;
-  --primary: #7c3aed;
-  --primary-light: rgba(124, 58, 237, 0.08);
-  --accent: #22c55e;
-  --shadow: 0 20px 60px rgba(15, 23, 42, 0.12), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  /* Primitive colors */
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-violet-500: #7c3aed;
+  --color-green-500: #22c55e;
+
+  /* Background */
+
+  --color-background: #f6f8fc;
+  --color-background-secondary: #e9edf5;
+
+  /* Surface */
+
+  --color-surface: rgba(255,255,255,.72);
+  --color-surface-raised: rgba(248,250,252,.88);
+
+  /* Border */
+
+  --color-border: rgba(15,23,42,.12);
+
+  /* Typography */
+
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+  --color-text-inverse: var(--color-white);
+
+  /* Brand */
+
+  --color-primary: var(--color-violet-500);
+  --color-primary-soft: rgba(124,58,237,.08);
+
+  /* Accent */
+
+  --color-accent: var(--color-green-500);
+
+  /* Focus */
+
+  --color-focus-ring: var(--color-primary);
+
+  /* Overlay */
+
+  --color-overlay: rgba(255,255,255,.35);
+
+  /* Shadow */
+
+  --shadow-md:
+    0 20px 60px rgba(15,23,42,.12),
+    inset 0 1px 0 rgba(255,255,255,.6);
+
+  --shadow-card:
+    0 20px 60px rgba(15,23,42,.12),
+    inset 0 1px 0 rgba(255,255,255,.6);
+
+  --shadow-card-hover:
+    0 24px 70px rgba(15,23,42,.16),
+    0 0 0 1px color-mix(in srgb, var(--color-primary) 20%, transparent);
 }
 
 :root.dark {
-  --bg: #070b14;
-  --bg-alt: #0b1220;
-  --surface: rgba(17, 24, 39, 0.72);
-  --surface-2: rgba(31, 41, 55, 0.9);
-  --border: rgba(148, 163, 184, 0.18);
-  --text: #e5eefb;
-  --muted: #94a3b8;
-  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  /* Background */
+
+  --color-background: #070b14;
+  --color-background-secondary: #0b1220;
+
+  /* Surface */
+
+  --color-surface: rgba(17,24,39,.72);
+  --color-surface-raised: rgba(31,41,55,.90);
+
+  /* Border */
+
+  --color-border: rgba(148,163,184,.18);
+
+  /* Typography */
+
+  --color-text: #e5eefb;
+  --color-text-muted: #94a3b8;
+  --color-text-inverse: var(--color-white);
+
+  /* Brand */
+
+  --color-primary: var(--color-violet-500);
+  --color-primary-soft: rgba(124,58,237,.15);
+
+  /* Accent */
+
+  --color-accent: var(--color-green-500);
+
+  /* Focus */
+
+  --color-focus-ring: var(--color-primary);
+
+  /* Overlay */
+
+  --color-overlay: rgba(0,0,0,.35);
+
+  /* Shadow */
+
+  --shadow-md:
+    0 20px 60px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.04);
+  
+  --shadow-card:
+    0 20px 60px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.04);
+
+  --shadow-card-hover:
+    0 24px 70px rgba(0,0,0,.45),
+    0 0 0 1px color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
 /* =========================================
@@ -44,10 +131,10 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  color: var(--text);
+  color: var(--color-text);
   background:
     radial-gradient(circle at top, rgba(124, 58, 237, 0.18), transparent 34%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+    linear-gradient(180deg, var(--color-background) 0%, var(--color-background-secondary) 100%);
   
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
@@ -92,7 +179,7 @@ h3 {
 }
 
 p:not([class*="text-"]) {
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 /* =========================================
@@ -122,7 +209,7 @@ p:not([class*="text-"]) {
 ----------------------------------------- */
 
 .section-title {
-  color: var(--text);
+  color: var(--color-text);
 
   @apply text-3xl
          font-semibold
@@ -141,7 +228,7 @@ p:not([class*="text-"]) {
 ----------------------------------------- */
 
 .feature-title {
-  color: var(--text);
+  color: var(--color-text);
 
   @apply text-lg
          font-semibold;
@@ -157,7 +244,7 @@ p:not([class*="text-"]) {
 ----------------------------------------- */
 
 .step-title {
-  color: var(--text);
+  color: var(--color-text);
 
   @apply text-xl
          font-semibold
@@ -179,16 +266,16 @@ p:not([class*="text-"]) {
 ----------------------------------------- */
 
 .skip-link {
-  background-color: var(--white);
-  color: var(--black);
-  box-shadow: var(--shadow);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  box-shadow: var(--shadow-md);
 }
 
 /* Brand
 ----------------------------------------- */
 
 .brand-title {
-  color: var(--text);
+  color: var(--color-text);
 
   @apply text-center
          text-base
@@ -196,8 +283,8 @@ p:not([class*="text-"]) {
 }
 
 .brand-icon {
-  color: var(--primary);
-  background-color: color-mix(in srgb, var(--primary) 12%, transparent);
+  color: var(--color-primary);
+  background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
 
   @apply inline-flex
          size-8
@@ -209,7 +296,7 @@ p:not([class*="text-"]) {
 }
 
 .brand-link {
-  color: var(--text);
+  color: var(--color-text);
 
   @apply flex
          items-center
@@ -239,7 +326,7 @@ p:not([class*="text-"]) {
 }
 
 .desktop-nav-link:focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--color-primary);
   outline-offset: 4px;
 }
 
@@ -247,10 +334,10 @@ p:not([class*="text-"]) {
 ----------------------------------------- */
 
 .theme-toggle {
-  color: var(--text);
+  color: var(--color-text);
   background-color:rgba(255,255,255,.05);
 
-  border:1px solid var(--border);
+  border:1px solid var(--color-border);
   transition: background-color .3s ease;
 
   @apply inline-flex
@@ -263,17 +350,17 @@ p:not([class*="text-"]) {
 }
 
 .theme-toggle:hover {
-  background-color: var(--primary-light);
+  background-color: var(--color-primary-soft);
 }
 
 .mobile-theme-toggle {
-  color: var(--white);
+  color: var(--color-white);
   border-color: rgba(255,255,255,.1);
   background-color: rgba(255,255,255,.05);
 }
 
 .mobile-menu-toggle {
-  color:var(--text);
+  color:var(--color-text);
 
   @apply cursor-pointer;
 }
@@ -300,7 +387,7 @@ p:not([class*="text-"]) {
   border: 1px solid rgba(255,255,255,.1);
   border-radius: 20px;
 
-  background-color: var(--primary);
+  background-color: var(--color-primary);
 
   padding: 0 1rem;
 
@@ -331,9 +418,9 @@ p:not([class*="text-"]) {
 ----------------------------------------- */
 
 .surface-card {
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
   backdrop-filter: blur(16px);
 
   @apply rounded-xl
@@ -343,12 +430,12 @@ p:not([class*="text-"]) {
 }
 
 .surface-card:focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--color-primary);
   outline-offset: 4px;
 }
 
 .surface-hover:hover {
-  border-color: color-mix(in srgb, var(--primary) 25%, var(--border));
+  border-color: color-mix(in srgb, var(--color-primary) 25%, var(--color-border));
   transform: translateY(-2px);
 }
 
@@ -372,15 +459,15 @@ p:not([class*="text-"]) {
 /* States */
 
 .btn:focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--color-primary);
   outline-offset: 4px;
 }
 
 /* Variants */
 
 .btn-compact {
-  color: var(--text);
-  border: 1px solid var(--border);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
 
   @apply cursor-pointer
          rounded-lg
@@ -393,8 +480,8 @@ p:not([class*="text-"]) {
 }
 
 .btn-primary {
-  color: var(--white);
-  background-color: var(--primary);
+  color: var(--color-white);
+  background-color: var(--color-primary);
 
   @apply px-6
          py-2.5
@@ -402,13 +489,13 @@ p:not([class*="text-"]) {
 }
 
 .btn-secondary {
-  color: var(--text);
-  border: 1px solid var(--border);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
   background-color: transparent;
 }
 
 .btn-ghost {
-  color: var(--text);
+  color: var(--color-text);
 
   @apply px-6
          py-2.5
@@ -418,8 +505,8 @@ p:not([class*="text-"]) {
 /* Variant states */
 
 .btn-compact:hover {
-  color: var(--primary);
-  border-color: var(--primary);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .btn-compact:active {
@@ -427,41 +514,41 @@ p:not([class*="text-"]) {
 }
 
 .btn-primary:hover {
-  background-color: color-mix(in srgb, var(--primary) 85%, var(--primary-light));
+  background-color: color-mix(in srgb, var(--color-primary) 85%, var(--color-primary-soft));
 }
 
 .btn-secondary:hover {
-  color: var(--white);
-  background-color: var(--primary);
-  border-color: var(--primary-light);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary-soft);
 
   transform: translateY(-2px);
 }
 
 .btn-ghost:hover {
-  color: var(--primary);
+  color: var(--color-primary);
 }
 
 /*  Hero
 ----------------------------------------- */
 
 .hero {
-  background-color: var(--surface);
-  border: 1px solid var(--border);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 20px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-md);
   backdrop-filter: blur(16px);
 }
 
 .hero-gradient-text {
   color: transparent;
-  background: linear-gradient(to right, var(--primary), var(--accent));
+  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
   background-clip: text;
 }
 
 .hero-actions {
-  background-color: var(--surface);
-  border-color: var(--border);
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
   backdrop-filter: blur(16px);
 }
 
@@ -476,8 +563,8 @@ p:not([class*="text-"]) {
 }
 
 .step-number {
-  color: var(--white);
-  background-color: var(--primary);
+  color: var(--color-white);
+  background-color: var(--color-primary);
 
   @apply flex
          size-12
@@ -507,7 +594,7 @@ p:not([class*="text-"]) {
 }
 
 .step:hover .step-card {
-  border-color: color-mix(in srgb, var(--primary) 30%, var(--border));
+  border-color: color-mix(in srgb, var(--color-primary) 30%, var(--color-border));
   transform: translateY(-2px);
   max-width: min(calc(var(--step-width, 64%) + 12%), 82%);
 }
@@ -520,13 +607,13 @@ p:not([class*="text-"]) {
 ----------------------------------------- */
 
 .dashboard-nav a {
-  color: var(--muted);
+  color: var(--color-text-muted);
 }
 
 .dashboard-nav a:hover,
 .dashboard-nav a.dashboard-demo-active {
-  color: var(--text);
-  background-color: var(--primary-light);
+  color: var(--color-text);
+  background-color: var(--color-primary-soft);
 
   transition:
     transform .2s ease,
@@ -545,7 +632,6 @@ p:not([class*="text-"]) {
   pointer-events: none;
   transition:opacity .4s ease;
 }
-
 
 .dashboard-demo-overlay.is-hidden {
   opacity: 0;
@@ -580,9 +666,9 @@ p:not([class*="text-"]) {
   opacity: 0;
 
   transform: translateY(-8px) scale(.96);
-  color: var(--white);
-  background-color: var(--primary);
-  border: 1px solid color-mix(in srgb, var(--primary) 70%,white);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 70%, var(--color-white));
 
   box-shadow: 0 10px 30px rgba(124,58,237,.35);
   backdrop-filter: blur(12px);
@@ -605,7 +691,7 @@ p:not([class*="text-"]) {
 }
 
 .dashboard-expand:hover {
-  background-color: color-mix(in srgb, var(--primary) 85%, white);
+  background-color: color-mix(in srgb, var(--color-primary) 85%, var(--color-white));
   box-shadow: 0 14px 35px rgba(124,58,237,.45);
 }
 
@@ -614,7 +700,7 @@ p:not([class*="text-"]) {
 }
 
 .dashboard-expand:focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--color-primary);
   outline-offset: 4px;
 }
 
@@ -627,8 +713,8 @@ p:not([class*="text-"]) {
 ----------------------------------------- */
 
 .pricing-featured {
-  border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
-  box-shadow: var(--shadow), 0 0 0 2px color-mix(in srgb, var(--primary) 35%, transparent);
+  border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+  box-shadow: var(--shadow-md), 0 0 0 2px color-mix(in srgb, var(--color-primary) 35%, transparent);
 }
 
 /* Testimonials
@@ -636,8 +722,8 @@ p:not([class*="text-"]) {
 
 .testimonial {
   background-color: var(--surface);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
 
   transition:
     transform .3s ease,
@@ -645,59 +731,45 @@ p:not([class*="text-"]) {
     box-shadow .3s ease;
 }
 
-/* Card hover
------------------------------------------ */
+.testimonial:hover {
+  border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
 
 .testimonial:hover {
-  border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 24px 70px rgba(15, 23, 42, 0.16),
-    0 0 0 1px color-mix(in srgb, var(--primary) 20%, transparent);
+  box-shadow: var(--shadow-card-hover);
 }
-
-:root.dark .testimonial:hover {
-  box-shadow:
-    0 24px 70px rgba(0, 0, 0, .45),
-    0 0 0 1px color-mix(in srgb, var(--primary) 25%, transparent);
-}
-
-/* Accessibility
------------------------------------------ */
 
 .testimonial:focus-within {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--color-primary);
   outline-offset: 4px;
 }
 
-/* Avatar
------------------------------------------ */
+/* Avatar */
 
 .testimonial-avatar {
   overflow: hidden;
 
   border-radius: 999px;
-  border: 3px solid color-mix(in srgb, var(--primary) 30%, transparent);
+  border: 3px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
 
-  background-color: var(--surface-2);
+  background-color: var(--color-surface-raised);
 
   transition:
     transform .3s ease,
     border-color .3s ease;
 }
 
-
 .testimonial:hover .testimonial-avatar {
   transform: scale(1.05);
-  border-color: var(--primary);
+  border-color: var(--color-primary);
 }
 
-/* Social icons
------------------------------------------ */
+/* Social icons */
 
 .testimonial-social {
-  color: var(--muted);
+  color: var(--color-text-muted);
 
   @apply inline-flex
     size-10
@@ -711,25 +783,21 @@ p:not([class*="text-"]) {
     transform .25s ease;
 }
 
-
 .testimonial-social svg {
   @apply size-5;
 
   fill: currentColor;
 }
 
-
 .testimonial-social:hover {
-  color: var(--primary);
-
-  background-color: var(--primary-light);
+  color: var(--color-primary);
+  background-color: var(--color-primary-soft);
 
   transform: translateY(-2px);
 }
 
-
 .testimonial-social:focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--color-primary);
   outline-offset: 4px;
 }
 
@@ -737,18 +805,16 @@ p:not([class*="text-"]) {
 ----------------------------------------- */
 
 .footer-link {
-  color: var(--muted);
-
-  transition:
-    color .2s ease;
+  color: var(--color-text-muted);
+  transition: color .2s ease;
 }
 
 .footer-link:hover {
-  color: var(--text);
+  color: var(--color-text);
 }
 
 .footer-social {
-  color: var(--muted);
+  color: var(--color-text-muted);
 
   @apply inline-flex
     size-10
@@ -769,7 +835,7 @@ p:not([class*="text-"]) {
 }
 
 .footer-social:hover {
-  color: var(--primary);
-  background-color: var(--primary-light);
+  color: var(--color-primary);
+  background-color: var(--color-primary-soft);
   transform: translateY(-2px);
 }
