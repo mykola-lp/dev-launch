@@ -1,175 +1,179 @@
-const preview = document.querySelector("#dashboard-showcase");
-const overlay = document.querySelector(".dashboard-demo-overlay");
+const preview = document.querySelector('#dashboard-showcase')
+const overlay = document.querySelector('.dashboard-demo-overlay')
 
-const navItems = document.querySelectorAll("[data-demo-nav]");
-const search = document.querySelector("[data-demo-search]");
-const fullscreenBtn = document.querySelector("[data-dashboard-fullscreen]");
+const navItems = document.querySelectorAll('[data-demo-nav]')
+const search = document.querySelector('[data-demo-search]')
+const fullscreenBtn = document.querySelector('[data-dashboard-fullscreen]')
 
-let running = false;
-let paused = false;
+let running = false
+let paused = false
 
 /*****************************************
  * Helpers
  *****************************************/
 
-function delay(time) {
-  return new Promise(resolve => {
-    setTimeout(resolve, time);
-  });
-}
+const delay = (time) =>
+  new Promise((resolve) => {
+    setTimeout(resolve, time)
+  })
 
 /*****************************************
  * Stop demo
  *****************************************/
 
-function stopDemo() {
-  paused = true;
-  overlay?.classList.add("is-hidden");
+const stopDemo = () => {
+  paused = true
+  overlay?.classList.add('is-hidden')
 }
 
 /*****************************************
  * Start demo
  *****************************************/
 
-function resetDemo() {
-  paused = false;
-  overlay?.classList.remove("is-hidden");
-  startDemo();
+const resetDemo = () => {
+  paused = false
+  overlay?.classList.remove('is-hidden')
+  startDemo()
 }
 
 /*****************************************
  * Hover navigation
  *****************************************/
 
-async function hoverNav(item) {
-  if (paused) return;
+const hoverNav = async (item) => {
+  if (paused) return
 
-  item.classList.add("dashboard-demo-active");
-  await delay(1200);
-  item.classList.remove("dashboard-demo-active");
+  item.classList.add('dashboard-demo-active')
+  await delay(1200)
+  item.classList.remove('dashboard-demo-active')
 }
 
 /*****************************************
  * Search typing
  *****************************************/
 
-async function runSearch() {
-  if (!search || paused) return;
+const runSearch = async () => {
+  if (!search || paused) return
 
-  const text = "Revenue";
+  const text = 'Revenue'
 
-  search.focus();
-  search.value = "";
+  search.focus({ preventScroll: true })
+  search.value = ''
 
   for (const char of text) {
-    if (paused) return;
+    if (paused) return
 
-    search.value += char;
-    await delay(150);
+    search.value += char
+    await delay(150)
   }
 
-  await delay(1500);
+  await delay(1500)
 
-  search.value = "";
-  search.blur();
+  search.value = ''
+  search.blur()
 }
 
 /*****************************************
  * Main demo loop
  *****************************************/
 
-async function startDemo() {
+const startDemo = async () => {
   if (running) {
-    return;
+    return
   }
 
-  running = true;
+  running = true
 
   while (!paused) {
     for (const item of navItems) {
-      if (paused) break;
+      if (paused) break
 
-      await hoverNav(item);
-      await delay(400);
+      await hoverNav(item)
+      await delay(400)
     }
 
-    if (paused) break;
+    if (paused) break
 
-    await runSearch();
-    await delay(800);
+    await runSearch()
+    await delay(800)
   }
 
-  running = false;
+  running = false
 }
 
 /*****************************************
  * User interaction
  *****************************************/
 
-preview?.addEventListener("mouseenter", () => {
-  stopDemo();
-});
+preview?.addEventListener('mouseenter', () => {
+  stopDemo()
+})
 
-preview?.addEventListener("mouseleave", () => {
-  resetDemo();
-});
+preview?.addEventListener('mouseleave', () => {
+  if (preview.contains(document.activeElement)) {
+    document.activeElement.blur()
+  }
+
+  resetDemo()
+})
 
 /*****************************************
  * Visible start
  *****************************************/
 
 const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
+  (entries) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        startDemo();
-        observer.disconnect();
+        startDemo()
+        observer.disconnect()
       }
-    });
+    })
   },
   {
-    threshold: 0.3
+    threshold: 0.3,
   }
-);
+)
 
 if (preview) {
-  observer.observe(preview);
+  observer.observe(preview)
 }
 
 /*****************************************
  * Fullscreen
  *****************************************/
 
-let savedScrollPosition = 0;
+let savedScrollPosition = 0
 
-fullscreenBtn?.addEventListener(
-  "click",
-  async () => {
-    if (!document.fullscreenElement) {
-      savedScrollPosition = window.scrollY;
-      await preview.requestFullscreen();
-      return;
-    }
-
-    await document.exitFullscreen();
+fullscreenBtn?.addEventListener('click', async () => {
+  if (!document.fullscreenElement) {
+    savedScrollPosition = window.scrollY
+    await preview.requestFullscreen()
+    return
   }
-);
 
-document.addEventListener(
-  "fullscreenchange",
-  () => {
-    if (document.fullscreenElement) {
-      fullscreenBtn.textContent = "Exit";
-      return;
-    }
+  await document.exitFullscreen()
+})
 
-    fullscreenBtn.textContent = "Expand";
+document.addEventListener('fullscreenchange', () => {
+  const isFullscreen = document.fullscreenElement === preview
 
-    setTimeout(() => {
-      window.scrollTo({
-        top: savedScrollPosition,
-        behavior: "instant"
-      });
-    }, 0);
+  preview?.classList.toggle('is-fullscreen', isFullscreen)
+
+  if (isFullscreen) {
+    stopDemo()
+    fullscreenBtn.textContent = 'Exit'
+    return
   }
-);
+
+  fullscreenBtn.blur()
+  resetDemo()
+  fullscreenBtn.textContent = 'Expand'
+
+  setTimeout(() => {
+    window.scrollTo({
+      top: savedScrollPosition,
+      behavior: 'instant',
+    })
+  }, 0)
+})
