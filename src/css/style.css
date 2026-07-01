@@ -822,6 +822,18 @@ p:not([class*="text-"]) {
   visibility: hidden;
 }
 
+#dashboard-showcase:fullscreen {
+  background: linear-gradient(180deg, var(--color-background) 0%, var(--color-background-secondary) 100%);
+}
+
+#dashboard-showcase:fullscreen .surface-card {
+  background-color: var(--color-surface-raised);
+}
+
+#dashboard-showcase:fullscreen .dashboard-demo-overlay {
+  display: none;
+}
+
 /* Pricing
 ----------------------------------------- */
 
