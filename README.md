@@ -1,22 +1,36 @@
 # DevLaunch
 
-DevLaunch is a responsive SaaS landing page for a startup launch platform. The project is built as a focused portfolio case for practicing React, Vite, Tailwind CSS, component-based UI, and responsive landing page design.
+DevLaunch is a responsive SaaS landing page for a startup launch platform. The project is built as a focused learning case for practicing Vite, JavaScript, HTML, Tailwind CSS v4, component-based UI, and responsive landing page design.
 
-## Project Status
+## Concept
 
-Planning stage. The repository currently contains the project brief and implementation roadmap. The application files will be added during development.
+Helps early-stage startup teams plan, validate, and launch a product faster. The landing page presents a fictional platform with launch planning, analytics, team collaboration, and AI-assisted product guidance.
 
-## Product Concept
+## Prerequisites
 
-DevLaunch helps early-stage startup teams plan, validate, and launch a product faster. The landing page presents a fictional platform with launch planning, analytics, team collaboration, and AI-assisted product guidance.
+Before getting started, make sure you have installed:
 
-## Goals
+- Node.js
+- npm
 
-- Practice Tailwind CSS through a real landing page instead of isolated UI exercises.
-- Build reusable React components with clear section boundaries.
-- Create a polished responsive layout for mobile, tablet, and desktop.
-- Demonstrate practical UI decisions: hierarchy, spacing, typography, states, and conversion-focused sections.
-- Ship a complete GitHub portfolio project with documentation and deployment.
+## Setup
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repo link>
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd dev-launch
+   ```
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
 
 ## Branch Naming
 
@@ -25,19 +39,13 @@ Use short branch names without `features/`.
 Recommended patterns:
 
 - `main` for the stable branch.
-- `setup/<topic>` for initial project setup.
-- `ui/<section>` for landing page sections.
 - `docs/<topic>` for documentation updates.
 - `fix/<topic>` for bug fixes.
 - `refactor/<topic>` for code cleanup without behavior changes.
-- `test/<topic>` for test work.
 - `chore/<topic>` for config, dependencies, and tooling.
 
 Examples:
 
-- `setup/devlaunch-base`
-- `ui/hero-section`
-- `ui/pricing-section`
 - `docs/readme-update`
 - `fix/mobile-menu`
 - `refactor/navbar`
@@ -51,294 +59,13 @@ Prefixes:
 - `feat:` new functionality
 - `fix:` bug fixes
 - `refactor:` code improvements without changing behavior
-- `style:` formatting, spacing, indentation, and visual-only changes
 - `docs:` README and documentation
 - `chore:` project setup, dependencies, and config
-- `test:` tests
 
 Examples:
 
 - `feat: add hero section`
-- `feat: build responsive navbar`
 - `fix: correct mobile menu overflow`
-- `refactor: split feature cards into data`
-- `style: align section spacing`
-- `docs: update project brief`
-- `chore: install tailwind dependencies`
-- `test: add faq accordion coverage`
-
-## Tech Stack
-
-- Vite
-- Tailwind CSS v4
-- HTML
-- JavaScript
-
-## Design Direction
-
-DevLaunch should feel like a modern B2B SaaS product: clean, confident, and operational. The UI should prioritize clarity and product value over decorative effects.
-
-### Visual Style
-
-- Dark interface with strong contrast.
-- Clean dashboard-inspired hero mockup.
-- Compact cards with subtle borders and shadows.
-- Purple used as an accent, not as the entire visual identity.
-- Responsive spacing and typography.
-- Smooth hover and focus states.
-
-### Suggested Palette
-
-| Token       | Color     | Usage                              |
-| ----------- | --------- | ---------------------------------- |
-| Background  | `#0B1120` | Main page background               |
-| Surface     | `#111827` | Cards and panels                   |
-| Surface Alt | `#1F2937` | Nested UI blocks                   |
-| Primary     | `#7C3AED` | Main CTA and highlights            |
-| Accent      | `#22C55E` | Positive metrics and growth states |
-| Text        | `#F8FAFC` | Main text                          |
-| Muted Text  | `#94A3B8` | Supporting copy                    |
-| Border      | `#334155` | Subtle dividers                    |
-
-## Planned Structure
-
-```text
-public/
-
-src/
-├── assets/
-│   ├── images/
-│   ├── icons/
-│   └── logos/
-│
-├── css/
-│   └── style.css
-│
-├── js/
-│   ├── navbar.js
-│   ├── faq.js
-│   └── theme.js
-│
-└── main.js
-
-index.html
-vite.config.js
-package.json
-README.md
-```
-
-## Page Sections
-
-### 1. Navbar
-
-Content:
-
-- Logo: `DevLaunch`
-- Links: `Home`, `Features`, `How it works`, `Pricing`, `FAQ`
-- Actions: `Login`, `Get started`
-
-Requirements:
-
-- Sticky or fixed navigation.
-- Backdrop blur on scroll area.
-- Mobile menu with open and close states.
-- Accessible buttons and links.
-
-Tailwind practice:
-
-- Flexbox
-- Responsive visibility
-- Fixed positioning
-- Backdrop blur
-- Spacing and alignment
-
-### 2. Hero
-
-Headline:
-
-```text
-Launch your startup in days, not months.
-```
-
-Description:
-
-```text
-Plan your launch, track growth, and keep your team aligned from idea to first customers.
-```
-
-Buttons:
-
-- `Start free trial`
-- `View demo`
-
-Hero visual:
-
-- A custom SaaS dashboard mockup with revenue, active users, launch checklist, and growth chart.
-
-Tailwind practice:
-
-- Responsive grid
-- Typography scale
-- Button states
-- Dashboard card layout
-- Decorative but restrained gradients
-
-### 3. Trusted By
-
-Display fictional or text-based partner logos:
-
-```text
-Orbit Labs
-Northstar
-LaunchPad
-SignalHQ
-Metricly
-```
-
-Tailwind practice:
-
-- Flex wrap
-- Gap utilities
-- Muted text styles
-- Hover states
-
-### 4. Features
-
-Six feature cards:
-
-- Launch Roadmaps
-- Growth Analytics
-- Team Workspaces
-- AI Product Assistant
-- Security Controls
-- Investor Reporting
-
-Tailwind practice:
-
-- CSS grid
-- Reusable cards
-- Icon styling
-- Hover and focus states
-
-### 5. Dashboard Preview
-
-Build a realistic SaaS dashboard preview that showcases the product interface.
-
-The preview should include:
-
-- Sidebar
-- Header
-- Four statistic cards
-- Analytics chart
-- Recent activity table
-
-Tailwind practice:
-
-- Nested CSS Grid
-- Flexbox layouts
-- Responsive dashboard
-- Reusable UI components
-- Glassmorphism
-- Shadows and gradients
-- Spacing system
-
-### 6. How It Works
-
-Three-step flow:
-
-1. Create a launch plan.
-2. Invite your team.
-3. Track growth and ship.
-
-Tailwind practice:
-
-- Ordered layout
-- Responsive columns
-- Step indicators
-- Alignment
-
-### 7. Pricing
-
-Plans:
-
-- Starter: `$0`
-- Pro: `$29/month`
-- Scale: `$99/month`
-
-Requirements:
-
-- Highlight the Pro plan.
-- Include feature lists.
-- Add clear CTA buttons.
-- Optional monthly/yearly billing toggle after MVP.
-
-Tailwind practice:
-
-- Grid
-- Borders
-- Badges
-- Button variants
-
-### 8. Testimonials
-
-Create three concise customer reviews with names, roles, and company names.
-
-Tailwind practice:
-
-- Card layout
-- Typography
-- Avatar placeholders
-- Responsive grid
-
-### 9. Call To Action (CTA)
-
-Final conversion section encouraging users to start building with DevLaunch.
-
-Content:
-
-- Strong headline focused on launching products faster.
-- Short supporting description explaining the value.
-- Primary CTA button:
-  - Start building
-  - Get started
-- Secondary CTA button:
-  - View demo
-  - Explore features
-
-Tailwind practice:
-
-- Flex layout
-- Responsive spacing
-- Background utilities
-- Button variants
-- Decorative absolute elements
-- Hover and focus states
-
-### 10. Footer
-
-Content:
-
-- Product links
-- Company links
-- Resource links
-- Social links: GitHub, X, LinkedIn
-
-Tailwind practice:
-
-- Multi-column responsive layout
-- Link states
-- Borders and spacing
-
-## Bonus Features
-
-Add these only after the MVP works well:
-
-- Dark/light theme switcher.
-- Animated statistics.
-- Interactive pricing toggle.
-- Scroll reveal animations.
-- Newsletter form.
-- More detailed dashboard chart mockups.
 
 ## Tailwind CSS Styling Guidelines
 
@@ -476,3 +203,30 @@ When combining Tailwind utilities and custom classes:
 `grid/gap/padding` → Tailwind structure
 
 `surface-card` → reusable design style
+
+## Note
+
+This project was created as a learning exercise to gain hands-on experience with Tailwind CSS.
+
+To speed up development, some UI sections were initially based on free components from **TailwindFlex** and **Preline**. Rather than using them as-is, I customized and reworked them to match my own design ideas, visual style, and the overall flow of the project.
+
+Many thanks to the creators of these excellent open-source resources.
+
+### Resources & Inspiration
+
+#### TailwindFlex
+
+* [Navigation Bar](https://tailwindflex.com/@anonymous/navbar)
+* [Hero Section](https://tailwindflex.com/@leon-bachmann/hero-template)
+* [Statistics Section](https://tailwindflex.com/@laurits/statistics-card-section)
+* [Feature Cards](https://tailwindflex.com/@samuel33/info-cards-5)
+* [Pricing Section](https://tailwindflex.com/@laurits/fancy-pricing-card)
+* [Team Section](https://tailwindflex.com/@sienna/meet-the-team-section)
+* [Team Member Cards](https://tailwindflex.com/@sammytg7/profile-team-or-testimonial)
+* [Newsletter Section](https://tailwindflex.com/@erik-hyatt/newsletter-form-with-svg-gradient-background)
+* [Footer](https://tailwindflex.com/@sammytg7/simple-footer-2-2)
+
+#### Preline
+
+* [Admin Dashboard Layout](https://preline.co/blocks/application-pages/admin-dashboard-pages/)
+* [Admin Dashboard Template](https://preline.co/templates/dashboards/admin-dashboard/)
