@@ -4,21 +4,14 @@ const menu = document.getElementById('mobile-menu')
 const clearRestoredFocus = () => {
   const active = document.activeElement
 
-  if (
-    active
-    && active !== document.body
-    && active.closest('header')
-  ) {
+  if (active && active !== document.body && active.closest('header')) {
     active.blur()
   }
 }
 
 window.addEventListener('load', clearRestoredFocus)
 
-if (
-  toggle
-  && menu
-) {
+if (toggle && menu) {
   const mobileLinks = menu.querySelectorAll('a')
 
   const setMenuState = (isOpen) => {
@@ -43,10 +36,7 @@ if (
   })
 
   document.addEventListener('keydown', (event) => {
-    if (
-      event.key === 'Escape'
-      && menu.classList.contains('is-open')
-    ) {
+    if (event.key === 'Escape' && menu.classList.contains('is-open')) {
       setMenuState(false)
       toggle.focus()
     }
@@ -54,9 +44,9 @@ if (
 
   document.addEventListener('click', (event) => {
     if (
-      !menu.classList.contains('is-open')
-      || menu.contains(event.target)
-      || toggle.contains(event.target)
+      !menu.classList.contains('is-open') ||
+      menu.contains(event.target) ||
+      toggle.contains(event.target)
     ) {
       return
     }

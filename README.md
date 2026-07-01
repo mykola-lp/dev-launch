@@ -26,6 +26,7 @@ Before getting started, make sure you have installed:
    ```bash
    cd dev-launch
    ```
+
 3. Start the development server:
 
    ```bash
@@ -77,18 +78,18 @@ Use Tailwind utility classes for properties that define the structure, position,
 
 **Examples:**
 
-* Display (`flex`, `grid`, `block`, `hidden`)
-* Flexbox (`items-center`, `justify-between`, `flex-col`, `flex-wrap`)
-* Grid (`grid-cols-*`, `col-span-*`)
-* Spacing (`p-*`, `m-*`, `gap-*`, `space-x-*`, `space-y-*`)
-* Sizing (`w-*`, `h-*`, `max-w-*`, `min-h-*`)
-* Positioning (`relative`, `absolute`, `top-*`, `z-*`)
-* Overflow (`overflow-hidden`, `overflow-auto`, `truncate`)
-* Visibility (`hidden`, `visible`, `block`, `inline`)
-* Responsive breakpoints (`sm:`, `md:`, `lg:`, `xl:`)
-* Borders & radius (`border`, `rounded-*`)
-* Local typography (`text-*`, `font-*`, `leading-*`, `tracking-*`)
-* Local states (`hover:*`, `focus:*`, `active:*`, `disabled:*`)
+- Display (`flex`, `grid`, `block`, `hidden`)
+- Flexbox (`items-center`, `justify-between`, `flex-col`, `flex-wrap`)
+- Grid (`grid-cols-*`, `col-span-*`)
+- Spacing (`p-*`, `m-*`, `gap-*`, `space-x-*`, `space-y-*`)
+- Sizing (`w-*`, `h-*`, `max-w-*`, `min-h-*`)
+- Positioning (`relative`, `absolute`, `top-*`, `z-*`)
+- Overflow (`overflow-hidden`, `overflow-auto`, `truncate`)
+- Visibility (`hidden`, `visible`, `block`, `inline`)
+- Responsive breakpoints (`sm:`, `md:`, `lg:`, `xl:`)
+- Borders & radius (`border`, `rounded-*`)
+- Local typography (`text-*`, `font-*`, `leading-*`, `tracking-*`)
+- Local states (`hover:*`, `focus:*`, `active:*`, `disabled:*`)
 
 ---
 
@@ -98,16 +99,16 @@ Keep global design decisions and visual styling in CSS.
 
 **Examples:**
 
-* Dark mode variables (`:root.dark`, `.dark`)
-* CSS variables (`--primary`, `--surface`, `--border`, `--text`)
-* Theme colors (`color`, `background-color`, `border-color`)
-* Custom shadows (`box-shadow`)
-* Custom backgrounds (`background`, `background-image`)
-* Gradient systems (`linear-gradient()`, `radial-gradient()`)
-* Custom borders (`border-color`, complex border styles)
-* Glassmorphism effects (`backdrop-filter`, blur, transparency)
-* Global typography styles (`font-family`, base text styles)
-* Design tokens (`spacing`, `radius`, `shadow`, `color` variables)
+- Dark mode variables (`:root.dark`, `.dark`)
+- CSS variables (`--primary`, `--surface`, `--border`, `--text`)
+- Theme colors (`color`, `background-color`, `border-color`)
+- Custom shadows (`box-shadow`)
+- Custom backgrounds (`background`, `background-image`)
+- Gradient systems (`linear-gradient()`, `radial-gradient()`)
+- Custom borders (`border-color`, complex border styles)
+- Glassmorphism effects (`backdrop-filter`, blur, transparency)
+- Global typography styles (`font-family`, base text styles)
+- Design tokens (`spacing`, `radius`, `shadow`, `color` variables)
 
 ### Use CSS for Advanced Effects
 
@@ -115,19 +116,19 @@ Whenever a style becomes difficult to express with utilities or requires multipl
 
 **Examples:**
 
-* `linear-gradient()`
-* `radial-gradient()`
-* `color-mix()`
-* `backdrop-filter`
-* `filter`
-* `mask`
-* `clip-path`
-* `mix-blend-mode`
-* `isolation`
-* Complex `transform`
-* Custom `transition`
-* `@keyframes`
-* `animation`
+- `linear-gradient()`
+- `radial-gradient()`
+- `color-mix()`
+- `backdrop-filter`
+- `filter`
+- `mask`
+- `clip-path`
+- `mix-blend-mode`
+- `isolation`
+- Complex `transform`
+- Custom `transition`
+- `@keyframes`
+- `animation`
 
 ---
 
@@ -137,10 +138,10 @@ Pseudo-elements should always remain in CSS.
 
 **Examples:**
 
-* `::before`
-* `::after`
-* `::selection`
-* `::marker`
+- `::before`
+- `::after`
+- `::selection`
+- `::marker`
 
 ---
 
@@ -150,12 +151,12 @@ If a group of styles represents a reusable design pattern, extract it into a CSS
 
 **Examples:**
 
-* `.surface-card`
-* `.glass-panel`
-* `.hero`
-* `.btn-primary`
-* `.badge`
-* `.alert`
+- `.surface-card`
+- `.glass-panel`
+- `.hero`
+- `.btn-primary`
+- `.badge`
+- `.alert`
 
 Avoid creating CSS classes for layouts that are only used once.
 
@@ -168,7 +169,7 @@ Do not create CSS classes that only wrap a few Tailwind utilities unless they re
 **Prefer**
 
 ```html
-<div class="flex flex-col gap-6 lg:pl-6">
+<div class="flex flex-col gap-6 lg:pl-6"></div>
 ```
 
 **Instead of**
@@ -195,7 +196,7 @@ When combining Tailwind utilities and custom classes:
 **Example:**
 
 ```html
-<div class="hero grid gap-6 p-6 surface-card">
+<div class="hero grid gap-6 p-6 surface-card"></div>
 ```
 
 `hero` → component identity
@@ -216,17 +217,17 @@ Many thanks to the creators of these excellent open-source resources.
 
 #### TailwindFlex
 
-* [Navigation Bar](https://tailwindflex.com/@anonymous/navbar)
-* [Hero Section](https://tailwindflex.com/@leon-bachmann/hero-template)
-* [Statistics Section](https://tailwindflex.com/@laurits/statistics-card-section)
-* [Feature Cards](https://tailwindflex.com/@samuel33/info-cards-5)
-* [Pricing Section](https://tailwindflex.com/@laurits/fancy-pricing-card)
-* [Team Section](https://tailwindflex.com/@sienna/meet-the-team-section)
-* [Team Member Cards](https://tailwindflex.com/@sammytg7/profile-team-or-testimonial)
-* [Newsletter Section](https://tailwindflex.com/@erik-hyatt/newsletter-form-with-svg-gradient-background)
-* [Footer](https://tailwindflex.com/@sammytg7/simple-footer-2-2)
+- [Navigation Bar](https://tailwindflex.com/@anonymous/navbar)
+- [Hero Section](https://tailwindflex.com/@leon-bachmann/hero-template)
+- [Statistics Section](https://tailwindflex.com/@laurits/statistics-card-section)
+- [Feature Cards](https://tailwindflex.com/@samuel33/info-cards-5)
+- [Pricing Section](https://tailwindflex.com/@laurits/fancy-pricing-card)
+- [Team Section](https://tailwindflex.com/@sienna/meet-the-team-section)
+- [Team Member Cards](https://tailwindflex.com/@sammytg7/profile-team-or-testimonial)
+- [Newsletter Section](https://tailwindflex.com/@erik-hyatt/newsletter-form-with-svg-gradient-background)
+- [Footer](https://tailwindflex.com/@sammytg7/simple-footer-2-2)
 
 #### Preline
 
-* [Admin Dashboard Layout](https://preline.co/blocks/application-pages/admin-dashboard-pages/)
-* [Admin Dashboard Template](https://preline.co/templates/dashboards/admin-dashboard/)
+- [Admin Dashboard Layout](https://preline.co/blocks/application-pages/admin-dashboard-pages/)
+- [Admin Dashboard Template](https://preline.co/templates/dashboards/admin-dashboard/)

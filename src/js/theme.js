@@ -18,10 +18,7 @@ const applyTheme = (theme) => {
 const getInitialTheme = () => {
   const savedTheme = localStorage.getItem(storageKey)
 
-  if (
-    savedTheme === 'dark'
-    || savedTheme === 'light'
-  ) {
+  if (savedTheme === 'dark' || savedTheme === 'light') {
     return savedTheme
   }
 
