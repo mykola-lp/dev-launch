@@ -81,10 +81,10 @@
 
                 <li class="desktop-nav-item">
                   <a
-                    href="#faq"
+                    href="#contact"
                     class="desktop-nav-link"
                   >
-                    FAQ
+                    Contact
                   </a>
                 </li>
               </ul>
@@ -1671,8 +1671,9 @@
           </div>
         </section>
 
-        <section id="cta" class="section py-16" aria-labelledby="cta-title">
+        <section id="contact" class="section py-16" aria-labelledby="contact-title">
           <div class="relative overflow-hidden rounded-3xl bg-(--color-primary) px-6 py-12 sm:px-10 lg:px-16">
+
             <!-- Decorative background -->
             <div class="pointer-events-none absolute inset-0 opacity-20" aria-hidden="true">
               <svg
@@ -1686,24 +1687,43 @@
 
             <!-- Content -->
             <div class="relative mx-auto flex max-w-4xl flex-col items-center text-center">
-              <h2 id="cta-title" class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Ready to build your next product?
+
+              <!-- Heading -->
+              <h2 id="contact-title" class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                Get in touch
               </h2>
 
               <p class="mt-4 max-w-2xl text-base text-blue-100 sm:text-lg">
-                Join startup teams using FlowPilot to plan, build, and launch products faster.
+                Have a question or want to work together? Send a message and I’ll get back to you.
               </p>
-      
-              <!-- Actions -->
-              <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-                <a href="#" class="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-(--color-primary) transition hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">
-                  Start Free Trial
-                </a>
 
-                <a href="#pricing" class="inline-flex items-center justify-center rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white">
-                  View Pricing
-                </a>
-              </div>
+              <!-- Form -->
+              <form class="mt-8 w-full max-w-xl space-y-4" action="#" method="post">
+
+                <!-- Email -->
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Your email"
+                  class="w-full rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-white placeholder-white/70 outline-none transition focus:border-white focus:ring-2 focus:ring-white/40"
+                />
+
+                <!-- Message -->
+                <textarea
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Your message..."
+                  class="w-full rounded-xl border border-white/30 bg-white/10 px-4 py-3 text-white placeholder-white/70 outline-none transition focus:border-white focus:ring-2 focus:ring-white/40"
+                ></textarea>
+
+                <!-- Submit -->
+                <button type="submit" class="btn btn-inverse w-full justify-center">
+                  Send message
+                </button>
+              </form>
+
             </div>
           </div>
         </section>

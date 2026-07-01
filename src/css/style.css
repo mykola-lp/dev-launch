@@ -502,6 +502,15 @@ p:not([class*="text-"]) {
          font-semibold;
 }
 
+.btn-inverse {
+  color: var(--color-primary);
+  background: var(--color-white);
+
+  @apply px-6
+         py-2.5
+         font-semibold;
+}
+
 /* Variant states */
 
 .btn-compact:hover {
@@ -527,6 +536,14 @@ p:not([class*="text-"]) {
 
 .btn-ghost:hover {
   color: var(--color-primary);
+}
+
+.btn-inverse:hover {
+  background: rgb(255 255 255 / .92);
+}
+
+.btn-inverse:active {
+  transform: scale(.98);
 }
 
 /*  Hero
