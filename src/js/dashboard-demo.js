@@ -58,7 +58,7 @@ async function runSearch() {
 
   const text = "Revenue";
 
-  search.focus();
+  search.focus({ preventScroll: true });
   search.value = "";
 
   for (const char of text) {
@@ -111,6 +111,10 @@ preview?.addEventListener("mouseenter", () => {
 });
 
 preview?.addEventListener("mouseleave", () => {
+  if (preview.contains(document.activeElement)) {
+    document.activeElement.blur();
+  }
+
   resetDemo();
 });
 
@@ -158,11 +162,18 @@ fullscreenBtn?.addEventListener(
 document.addEventListener(
   "fullscreenchange",
   () => {
-    if (document.fullscreenElement) {
+    const isFullscreen = document.fullscreenElement === preview;
+
+    preview?.classList.toggle("is-fullscreen", isFullscreen);
+
+    if (isFullscreen) {
+      stopDemo();
       fullscreenBtn.textContent = "Exit";
       return;
     }
 
+    fullscreenBtn.blur();
+    resetDemo();
     fullscreenBtn.textContent = "Expand";
 
     setTimeout(() => {
