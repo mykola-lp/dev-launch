@@ -19,23 +19,50 @@ if (
   toggle
   && menu
 ) {
+  const mobileLinks = menu.querySelectorAll('a')
+
   const setMenuState = (isOpen) => {
-    menu.classList.toggle('hidden', !isOpen)
+    menu.classList.toggle('is-open', isOpen)
+
     toggle.setAttribute('aria-expanded', String(isOpen))
+    toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu')
+
     menu.setAttribute('aria-hidden', String(!isOpen))
+
+    document.body.style.overflow = isOpen ? 'hidden' : ''
   }
 
   toggle.addEventListener('click', () => {
-    const isOpen = menu.classList.contains('hidden')
-    setMenuState(isOpen)
+    setMenuState(!menu.classList.contains('is-open'))
   })
 
-  menu.querySelectorAll('a').forEach((link) => {
+  mobileLinks.forEach((link) => {
     link.addEventListener('click', () => {
       setMenuState(false)
     })
   })
 
-  // init state
+  document.addEventListener('keydown', (event) => {
+    if (
+      event.key === 'Escape'
+      && menu.classList.contains('is-open')
+    ) {
+      setMenuState(false)
+      toggle.focus()
+    }
+  })
+
+  document.addEventListener('click', (event) => {
+    if (
+      !menu.classList.contains('is-open')
+      || menu.contains(event.target)
+      || toggle.contains(event.target)
+    ) {
+      return
+    }
+
+    setMenuState(false)
+  })
+
   setMenuState(false)
 }
